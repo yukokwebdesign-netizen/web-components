@@ -1,0 +1,365 @@
+/* ============================================
+   TEMPLATE VARIABLES
+   ============================================ */
+:root {
+  /* --- Spacing（余白） --- */
+  --section-padding-y: 80px;   /* セクション上下の余白 */
+  --section-padding-x: 40px;   /* セクション左右の余白（コンテナ内） */
+  --container-max-width: 1100px; /* コンテナの最大幅 */
+
+  /* --- Colors（カラー） --- */
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-border: #cccccc;
+  --color-placeholder-bg: #e0e0e0;
+  --color-placeholder-text: #999999;
+  --color-header-bg: #262626;
+  --color-header-text: #ffffff;
+  --color-footer-bg: #1a1a1a;
+  --color-footer-text: #cccccc;
+  --color-label-bg: #444444;
+  --color-label-text: #ffffff;
+  --color-btn-bg: #444444;
+  --color-btn-text: #ffffff;
+
+  /* --- Typography --- */
+  --font-base: "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+
+  /* --- Header --- */
+  --header-height: 70px;
+
+  /* --- Breakpoints（参考） --- */
+  /* tablet: 768px / mobile: 480px */
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg);
+  color: #333;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ============================================
+   LAYOUT UTILITY
+   ============================================ */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* セクション共通 */
+.section {
+  padding: var(--section-padding-y) 0;
+}
+
+/* セクション識別ラベル */
+.section-label {
+  display: inline-block;
+  background: var(--color-label-bg);
+  color: var(--color-label-text);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   PLACEHOLDER（枠）
+   ============================================ */
+.placeholder {
+  background: var(--color-placeholder-bg);
+  border: 2px dashed var(--color-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-placeholder-text);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.placeholder--hero {
+  width: 100%;
+  height: 480px;
+}
+
+.placeholder--text {
+  min-height: 300px;
+}
+
+.placeholder--image {
+  min-height: 300px;
+}
+
+.placeholder--card {
+  height: 220px;
+  width: 100%;
+}
+
+.placeholder--footer {
+  width: 100%;
+  height: 120px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 32px;
+}
+
+.header__nav-list a {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.header__nav-list a:hover {
+  opacity: 1;
+}
+
+/* ハンバーガーボタン */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.header__hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--color-header-text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ハンバーガー → X */
+.header__hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header__hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-surface);
+}
+
+/* ============================================
+   TEXT + IMAGE SECTION
+   ============================================ */
+.content-section {
+  background: var(--color-surface);
+}
+
+.content-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ============================================
+   CAROUSEL SECTION
+   ============================================ */
+.carousel-section {
+  background: var(--color-bg);
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel__track-wrapper {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel__slide {
+  flex: 0 0 calc(100% / 3);
+  padding: 0 10px;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.carousel__btn {
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.carousel__btn:hover { opacity: 0.75; }
+
+.carousel__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.carousel__dot.active {
+  background: var(--color-btn-bg);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: var(--section-padding-y) 0;
+}
+
+/* ============================================
+   RESPONSIVE — TABLET (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 60px;
+    --section-padding-x: 24px;
+  }
+
+  /* ナビをドロワーに */
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--color-header-bg);
+    padding: 16px 0;
+  }
+
+  .header__nav.open {
+    display: block;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__nav-list a {
+    display: block;
+    padding: 14px var(--section-padding-x);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .placeholder--hero {
+    height: 320px;
+  }
+
+  /* Text + Image → 1カラム */
+  .content-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Carousel → 2枚 */
+  .carousel__slide {
+    flex: 0 0 50%;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (max 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: 40px;
+    --section-padding-x: 16px;
+  }
+
+  .placeholder--hero {
+    height: 220px;
+  }
+
+  /* Carousel → 1枚 */
+  .carousel__slide {
+    flex: 0 0 100%;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>header-pattern-01</title>
+        <link rel="stylesheet" href="../../asset/reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+      <div class="container header__inner">
+        <div class="header__logo">Logo</div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">About</a></li>
+            <li><a href="#!">Services</a></li>
+            <li><a href="#!">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="header__hamburger" id="hamburger" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="section-label">Hero Section</div>
+        <div class="placeholder placeholder--hero"></div>
+      </div>
+    </section>
+
+    <!-- ========== TEXT + IMAGE ========== -->
+    <section class="section content-section">
+      <div class="container">
+        <div class="section-label">Text + Image Section</div>
+        <div class="content-section__grid">
+          <div class="placeholder placeholder--text">
+            <span>Text Area</span>
+          </div>
+          <div class="placeholder placeholder--image">
+            <span>Image Area</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CAROUSEL ========== -->
+    <section class="section carousel-section">
+      <div class="container">
+        <div class="section-label">Carousel Section</div>
+        <div class="carousel">
+          <div class="carousel__track-wrapper">
+            <ul class="carousel__track">
+              <li class="carousel__slide">
+                <div class="placeholder placeholder--card"><span>Card 1</span></div>
+              </li>
+              <li class="carousel__slide">
+                <div class="placeholder placeholder--card"><span>Card 2</span></div>
+              </li>
+              <li class="carousel__slide">
+                <div class="placeholder placeholder--card"><span>Card 3</span></div>
+              </li>
+              <li class="carousel__slide">
+                <div class="placeholder placeholder--card"><span>Card 4</span></div>
+              </li>
+              <li class="carousel__slide">
+                <div class="placeholder placeholder--card"><span>Card 5</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel__controls">
+            <button class="carousel__btn" id="carousel-prev" aria-label="前へ">&#8592;</button>
+            <div class="carousel__dots" id="carousel-dots"></div>
+            <button class="carousel__btn" id="carousel-next" aria-label="次へ">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="section-label">Footer</div>
+        <div class="placeholder placeholder--footer">
+          <span>Footer Content</span>
+        </div>
+      </div>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

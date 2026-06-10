@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>header-pattern-01</title>
+        <link rel="stylesheet" href="../../asset/reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="carousel-wrap">
+  <div class="carousel-header">
+    <span class="carousel-label">Nature Gallery</span>
+    <span class="carousel-counter" id="counter">1 / 7</span>
+  </div>
+
+  <div class="carousel-outer">
+    <div class="carousel-viewport" id="viewport">
+      <div class="carousel-track" id="track">
+
+        <div class="carousel-slide active">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop" alt="山の風景" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Mountain Peaks</p>
+            <p class="carousel-caption-sub">雄大なアルプスの稜線</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&auto=format&fit=crop" alt="森林の風景" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Ancient Forest</p>
+            <p class="carousel-caption-sub">光が差し込む原生林</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&auto=format&fit=crop" alt="海の風景" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Ocean Horizon</p>
+            <p class="carousel-caption-sub">静かな夕暮れの海岸</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=900&auto=format&fit=crop" alt="霧の谷" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Misty Valley</p>
+            <p class="carousel-caption-sub">朝霧に包まれた渓谷</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=900&auto=format&fit=crop" alt="オーロラ" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Northern Lights</p>
+            <p class="carousel-caption-sub">夜空を彩るオーロラ</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1682686580391-615b1f28e5ee?w=900&auto=format&fit=crop" alt="砂漠" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Desert Dunes</p>
+            <p class="carousel-caption-sub">風紋が美しい砂丘</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=900&auto=format&fit=crop" alt="滝" />
+          <div class="carousel-caption">
+            <p class="carousel-caption-title">Waterfall</p>
+            <p class="carousel-caption-sub">深い緑に囲まれた滝</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-controls">
+    <div class="drag-indicator">↔ スワイプで移動</div>
+    <div class="carousel-dots" id="dots" role="tablist" aria-label="スライド選択"></div>
+    <div class="carousel-arrows">
+      <button class="carousel-btn" id="prev" aria-label="前のスライド">←</button>
+      <button class="carousel-btn" id="next" aria-label="次のスライド">→</button>
+    </div>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
