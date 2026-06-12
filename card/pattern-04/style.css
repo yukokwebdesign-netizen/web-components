@@ -1,0 +1,50 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+
+/* =====================
+   Sticky Scroll
+===================== */
+.section-cover {
+    background: linear-gradient(90deg, rgb(217,243,254), rgb(217,248,234), rgb(255,255,224));
+}
+
+.scroll-top {
+    position: sticky;
+    top: 0;
+    margin-bottom: 15vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 5%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.scroll-top:last-of-type {
+    margin-bottom: 0;
+}
+
+.scroll-top img {
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scroll-top div {
+    width: 40%;
+}
+
+.scroll-top h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.scroll-top p {
+    font-size: 13px;
+    line-height: 1.8;
+}
