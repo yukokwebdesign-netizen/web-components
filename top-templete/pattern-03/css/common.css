@@ -1,0 +1,382 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Common Style
+common.css
+-----------------------------------------------------------------------
+  [構成]
+  1. CSS カスタムプロパティ（変数）
+  2. ベーススタイル
+  3. レイアウトユーティリティ
+  4. カラー・タイポグラフィユーティリティ
+  5. 共通コンポーネント（section-title / btn / arrow）
+  6. ヘッダー
+  7. バーガーメニュー（SP）
+  8. フッター
+---------------------------------------------------------------------*/
+
+/*===========================================================
+    1. CSS カスタムプロパティ（変数）
+    ※ここを変更するだけでサイト全体の色・書体が変わります
+===========================================================*/
+:root {
+    /* --- ★ここを変更するだけでサイト全体の色が変わります --- */
+    --color-main:   #1a3a2a;   /* メイン（深緑） */
+    --color-sub:    #c8881e;   /* アクセント（アンバー） */
+    --color-beige:  #f5f0e8;   /* ベース背景 */
+    --color-white:  #ffffff;
+    --color-black:  #1a2018;   /* 本文テキスト */
+    --color-grey:   #888888;
+
+    /* --- 透過バリエーション（--color-main / --color-beige から自動生成） --- */
+
+    --color-main-15:  rgba(26, 58, 42, 0.15);
+    --color-main-8:   rgba(26, 58, 42, 0.08);
+    --color-main-12:  rgba(26, 58, 42, 0.12);
+    --color-beige-97: rgba(245, 240, 232, 0.97);
+    --color-beige-45: rgba(245, 240, 232, 0.45);
+
+    /* --- グラデーション（--color-main / --color-sub から派生） --- */
+    --grad-main:    linear-gradient(45deg, #2d6a4f, var(--color-main));
+    --grad-sub:     linear-gradient(45deg, #e9a94b, var(--color-sub));
+    --grad-hero:    linear-gradient(135deg, #0d2b1e 0%, var(--color-main) 40%, #2d5a3d 70%, #3a7a52 100%);
+
+    /* --- タイポグラフィ --- */
+    --font-base:    'Barlow Semi Condensed', 'Noto Sans JP', sans-serif;
+    --font-display: 'Barlow Condensed', sans-serif;
+
+    /* --- インナー幅 --- */
+    --inner-width:  1600px;
+    --inner-pad:    5%;
+
+    /* --- 角丸 --- */
+    --radius-s:     3px;
+    --radius-m:     6px;
+
+    /* --- トランジション --- */
+    --transition:   0.5s;
+}
+
+/*===========================================================
+    2. ベーススタイル
+===========================================================*/
+body {
+    font-family: var(--font-base);
+    color: var(--color-black);
+    background: var(--color-beige);
+    line-height: 1.8em;
+    padding-top: 110px;
+}
+
+/*===========================================================
+    3. レイアウトユーティリティ
+===========================================================*/
+
+/* インナー幅 */
+.inner {
+    padding: 0 var(--inner-pad);
+    margin: auto;
+    max-width: var(--inner-width);
+    position: relative;
+}
+
+/* クリアフィックス */
+.cl::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* PC / SP 出し分け（デフォルトはPC表示） */
+.pc { display: block; }
+.sp { display: none; }
+
+/*===========================================================
+    4. カラー・タイポグラフィユーティリティ
+===========================================================*/
+
+/* --- テキストカラー --- */
+.text-white { color: var(--color-white); }
+.text-beige { color: var(--color-beige); }
+.text-main  { color: var(--color-main); }
+.text-sub   { color: var(--color-sub); }
+.text-grey  { color: var(--color-grey); }
+
+/* --- 背景カラー --- */
+.bg-main    { background: var(--color-main); }
+.bg-sub     { background: var(--color-sub); }
+.bg-beige   { background: var(--color-beige); }
+.bg-black   { background: var(--color-black); }
+.bg-grad-main { background: var(--grad-main); }
+.bg-grad-sub  { background: var(--grad-sub); }
+
+/* --- フォントウェイト --- */
+.fw3 { font-weight: 300; }
+.fw5 { font-weight: 500; }
+.fw6 { font-weight: 600; }
+
+/* --- フォントファミリー --- */
+.font-display { font-family: var(--font-display); }
+
+/* --- スタイル --- */
+.italic { font-style: italic; }
+
+/* --- レタースペーシング --- */
+.ls007 { letter-spacing: 0.07em; }
+.ls01  { letter-spacing: 0.1em; }
+.ls015 { letter-spacing: 0.15em; }
+.ls02  { letter-spacing: 0.2em; }
+
+/* --- フォントサイズ（本文系） --- */
+.f13 { font-size: 1.3rem; line-height: 1.75em; }
+.f14 { font-size: 1.4rem; line-height: 1.75em; }
+.f15 { font-size: 1.5rem; line-height: 1.75em; }
+.f16 { font-size: 1.6rem; line-height: 1.75em; }
+.f17 { font-size: 1.7rem; line-height: 1.75em; }
+.f18 { font-size: 1.8rem; line-height: 1.75em; }
+
+/* --- ポジション --- */
+.pos-re { position: relative; }
+.pos-ab { position: absolute; }
+
+/* --- レイアウト補助 --- */
+.flx   { display: flex; align-items: center; }
+.w100  { width: 100%; display: block; }
+.cover { background-size: cover; background-position: center; }
+.tr    { transition: var(--transition); }
+
+/*===========================================================
+    5. 共通コンポーネント
+===========================================================*/
+
+/* ----- section-title（セクション見出し） ----- */
+/*
+  使い方:
+  <hgroup class="section-title section-title--dark">
+    <h2>SECTION</h2>
+    <p>日本語タイトル</p>
+  </hgroup>
+*/
+.section-title {
+    text-align: center;
+    display: table;
+    margin: 0 auto 4% auto;
+    padding-top: 17px;
+    border-top: 7px solid currentColor;
+}
+.section-title h2 {
+    font-family: var(--font-display);
+    font-size: 5.5rem;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.13em;
+    line-height: 1em;
+}
+.section-title p {
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    line-height: 1em;
+    padding: 10px 0 0 0;
+    font-weight: 400;
+}
+
+/* 色バリエーション */
+.section-title--dark  { color: var(--color-black); }
+.section-title--light { color: var(--color-beige); }
+
+/* ----- btn（ボタン共通） ----- */
+/*
+  使い方:
+  <a class="btn btn--main" href="#">ツアーを見る</a>
+  <a class="btn btn--sub"  href="#">予約する</a>
+*/
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.12em;
+    border-radius: var(--radius-s);
+    transition: opacity var(--transition);
+    color: var(--color-white);
+}
+.btn:hover  { opacity: 0.85; }
+.btn--main  { background: var(--grad-main); }
+.btn--sub   { background: var(--grad-sub); }
+
+/*===========================================================
+    6. ヘッダー
+===========================================================*/
+.header {
+    padding: 35px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: var(--color-beige-97);
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+/* スクロール後の縮小状態 */
+.header.is-small {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-main-15);
+    box-shadow: 0 2px 20px var(--color-main-8);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ロゴ */
+.header__logo {
+    width: 160px;
+    transition: width var(--transition);
+}
+.header.is-small .header__logo {
+    width: 110px;
+}
+.header__logo img {
+    height: 38px;
+    width: auto;
+}
+
+/* ナビゲーション（右寄せ） */
+.header__nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.header__nav-list {
+    display: flex;
+    align-items: center;
+}
+.header__nav-list li {
+    padding: 0 15px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="20"><line x1="0" y1="2" x2="0" y2="18" stroke="%231a3a2a" stroke-width="1" opacity="0.25"/></svg>') right center / 1px 100% no-repeat;
+}
+.header__nav-list li:last-child {
+    background: none;
+    margin: 0;
+}
+.header__nav-list a {
+    transition: color var(--transition);
+}
+.header__nav-list a:hover {
+    color: var(--color-main);
+}
+
+/* コンタクトボタン */
+.header__contact {
+    height: 30px;
+    margin-left: 10px;
+    padding: 0 20px;
+    border-radius: var(--radius-s);
+    background: var(--grad-main);
+}
+.header__contact a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+/*===========================================================
+    7. バーガーメニュー（SP）
+===========================================================*/
+.burger-trigger {
+    display: none;
+    width: 35px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 12px;
+}
+.burger-trigger span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-main);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+}
+.burger-trigger span:nth-child(1) { top: 0; }
+.burger-trigger span:nth-child(2) { top: 11px; }
+.burger-trigger span:nth-child(3) { top: 22px; }
+
+/* 開いたとき */
+.burger-trigger.is-open span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+.burger-trigger.is-open span:nth-child(2) { opacity: 0; }
+.burger-trigger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+
+/*
+    burger-menu は .sp クラスを持たせない。
+    display の on/off はここだけで管理する。
+*/
+.burger-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: var(--color-beige-97);
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.burger-menu.is-open {
+    display: block;
+}
+.burger-menu__list li {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid var(--color-main-12);
+    width: 88%;
+    margin: 0 auto;
+}
+.burger-menu__list a,
+.burger-menu__close {
+    display: block;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+/*===========================================================
+    8. フッター
+===========================================================*/
+.footer {
+    padding: 22px 0;
+    background: var(--color-main);
+}
+.footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer__logo {
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+}
+.footer__copy {
+    font-size: 1.2rem;
+    color: var(--color-beige-45);
+    letter-spacing: 0.07em;
+    line-height: 28px;
+    margin-left: auto; /* 追加: 全デバイスで右寄せ */
+}

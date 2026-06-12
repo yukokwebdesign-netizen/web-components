@@ -1,0 +1,193 @@
+/* ==========================================
+   common.css — 変数・ユーティリティ・ヘッダー・フッター
+========================================== */
+
+/* ---------- CSS変数（一元管理） ---------- */
+:root {
+  /* Color */
+  --color-main:  #1a3a2a;
+  --color-sub:   #c8881e;
+  --color-base:  #f5f0e8;
+  --color-black: #1a2018;
+  --color-white: #ffffff;
+  --color-grey:  #888888;
+
+  /* Font */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Noto Sans JP', sans-serif;
+
+  /* Inner width */
+  --inner-width: 1600px;
+  --inner-pd:    40px;
+
+  /* Radius */
+  --radius-s: 3px;
+  --radius-m: 8px;
+
+  /* Transition */
+  --transition: 0.3s ease;
+}
+
+/* ---------- ユーティリティ ---------- */
+.inner {
+  width: 100%;
+  max-width: var(--inner-width);
+  margin-inline: auto;
+  padding-inline: var(--inner-pd);
+}
+
+.cl { color: var(--color-sub); }
+.fw6 { font-weight: 600; }
+.fw7 { font-weight: 700; }
+.ta-c { text-align: center; }
+
+/* ---------- ベーススタイル ---------- */
+body {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--color-black);
+  background-color: var(--color-base);
+}
+
+/* ---------- セクション共通 ---------- */
+section {
+  padding-block: 100px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-main);
+  margin-bottom: 60px;
+}
+
+.section-title--light {
+  color: var(--color-white);
+}
+
+/* ---------- ヘッダー ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--color-white);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.header__logo {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-main);
+  letter-spacing: 0.05em;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header__nav a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-black);
+  transition: color var(--transition);
+}
+
+.header__nav a:hover {
+  color: var(--color-sub);
+}
+
+/* ---------- ハンバーガーボタン（common: 存在するが普段は非表示） ---------- */
+.header__hamburger {
+  display: none; /* SP以外では非表示 */
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 101; /* ドロワー(100)より前面に出す */
+}
+
+.header__hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-main);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+
+/* 開いた状態（×マーク） */
+.header__hamburger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.header__hamburger.is-open span:nth-child(2) { opacity: 0; }
+.header__hamburger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* オーバーレイ */
+.header__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 99;
+}
+.footer {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding-block: 60px 40px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__nav a {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--transition);
+}
+
+.footer__nav a:hover {
+  color: var(--color-white);
+}
+
+.footer__copy {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 16px;
+}

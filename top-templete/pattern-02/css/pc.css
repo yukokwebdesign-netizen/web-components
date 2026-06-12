@@ -1,0 +1,139 @@
+/* ==========================================
+   pc.css — セクション固有のレイアウト（基準値）
+========================================== */
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-top: 170px;
+  padding-bottom: 120px;
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-sub);
+  margin-bottom: 16px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.hero__text {
+  font-size: 1.7rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: var(--color-sub);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-s);
+  transition: opacity var(--transition);
+}
+
+.hero__btn:hover {
+  opacity: 0.8;
+}
+
+/* ---------- Service ---------- */
+.service {
+  background-color: var(--color-white);
+}
+
+.service__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.service__item {
+  padding: 40px 32px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-m);
+}
+
+.service__item-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-sub);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.service__item-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 12px;
+}
+
+.service__item-text {
+  font-size: 1.5rem;
+  color: var(--color-grey);
+  line-height: 1.8;
+}
+
+/* ---------- Works ---------- */
+.works {
+  background-color: var(--color-base);
+}
+
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.works__item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.works__item-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: rgba(0,0,0,0.06);
+  object-fit: cover;
+}
+
+.works__item-body {
+  padding: 24px 28px;
+}
+
+.works__item-tag {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-sub);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.works__item-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 8px;
+}
+
+.works__item-text {
+  font-size: 1.4rem;
+  color: var(--color-grey);
+}

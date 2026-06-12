@@ -1,0 +1,120 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Tablet Style
+tb.css
+-----------------------------------------------------------------------
+  対象：1024px以下 / 768px以下
+---------------------------------------------------------------------*/
+
+/* ===== 1024px以下 ===== */
+@media screen and (max-width: 1024px) {
+
+body {
+    padding-top: 86px;
+}
+.header { padding: 28px 0; }
+.header.is-small { padding: 10px 0; }
+.header__logo { width: 130px; }
+.header__nav-list li { font-size: 1.15rem; }
+.header__contact { padding: 0 14px; margin-left: 10px; }
+
+/* hero */
+.hero__title  { font-size: 7rem; }
+.hero__sub    { font-size: 2rem; }
+
+/* section-title */
+.section-title h2 { font-size: 4.5rem; }
+
+/* point */
+.point__head   { font-size: 3rem; }
+.point__img    { height: 25vw; }
+.intro__catch  { font-size: 2.5rem; }
+
+/* lineup */
+.lineup__ttl  { font-size: 1.8rem; }
+
+/* scene */
+.scene__slide { width: 320px; height: 220px; }
+
+} /* end 1024px */
+
+
+/* ===== 768px以下 ===== */
+@media screen and (max-width: 768px) {
+
+body { padding-top: 66px; }
+
+/* PC/SP 出し分け */
+.pc { display: none !important; }
+.sp { display: block !important; }
+
+/* header */
+.header { padding: 18px 0; }
+.header.is-small { padding: 8px 0; }
+.header__logo { width: 110px; }
+.header__nav-list { display: none; }
+/* CONTACTボタンをハンバーガーの直左に配置 */
+.header__contact { margin: 0 8px 0 0; padding: 0 14px; }
+/* バーガートリガーはflexで表示（spanが縦並びになるため） */
+.burger-trigger { display: flex !important; flex-direction: column; justify-content: space-between; }
+
+/* hero */
+.hero { min-height: auto; }
+.hero__title { font-size: 14vw; }
+.hero__sub   { font-size: 1.7rem; max-width: 100%; }
+.hero__img   { display: none; }
+
+/* intro */
+.intro { margin: -4% 0 6% 0; padding: 0; }
+.intro__boxes { flex-direction: column; }
+.intro__box   { width: 100%; }
+.intro__text-box { padding: 6% 5%; }
+.intro__img-box  { padding: 7% 5%; }
+.intro__catch    { font-size: 2.6rem; }
+.intro__catch-sub { font-size: 1.35rem; }
+
+/* point */
+.point { padding: 0 0 10% 0; }
+.point__head { font-size: 2.6rem; }
+.point__list { flex-direction: column; gap: 0; }
+.point__item { width: 100%; margin-bottom: 2%; }
+.point__img  { height: 50vw; }
+.point__num  { font-size: 5rem; }
+
+/* lineup */
+.lineup__row { display: block; }
+.lineup__col { width: 100%; padding: 0 5%; margin-bottom: 50px; }
+/* 右カラムも左カラムと同じ余白を適用 */
+.lineup__col:last-child { margin-bottom: 0; padding: 0 5%; }
+.lineup__img  { height: 40vw; }
+.lineup__body { flex-direction: column; }
+.lineup__body--right { flex-direction: column; }
+.lineup__thumb { display: none; }
+.lineup__text  { width: 100%; padding-top: 20px; }
+
+/* scene */
+.scene__list { flex-direction: column; border-left: none; }
+/* scene__item を縦並びに */
+.scene__item {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #c8bfa8;
+    padding: 5% 0;
+    display: block;
+}
+.scene__name-wrap { width: 180px; flex-shrink: 0; }
+.scene__slide { width: 280px; height: 200px; }
+
+/* section-title */
+.section-title h2 { font-size: 10vw; }
+
+/* company */
+.company__sns    { margin: 20px auto; }
+.company__mail   { font-size: 2.2rem; }
+
+/* footer */
+.footer { padding: 14px 0; }
+.footer__logo { max-width: 100px; }
+.footer__copy { font-size: 1rem; }
+
+} /* end 768px */

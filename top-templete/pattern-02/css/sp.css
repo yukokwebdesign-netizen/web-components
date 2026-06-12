@@ -1,0 +1,91 @@
+/* ==========================================
+   sp.css — 767px以下の上書き
+========================================== */
+
+@media screen and (max-width: 767px) {
+
+  :root {
+    --inner-pd: 20px;
+  }
+
+  section {
+    padding-block: 60px;
+  }
+
+  .section-title {
+    font-size: 3.6rem;
+    margin-bottom: 40px;
+  }
+
+  /* Header */
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75vw;
+    max-width: 300px;
+    height: 100%;
+    background-color: var(--color-white);
+    padding: 90px 32px 40px;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+  }
+
+  .header__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .header__nav a {
+    font-size: 1.8rem;
+    padding-block: 16px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .header__overlay.is-open {
+    display: block;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 80px;
+  }
+
+  .hero__title {
+    font-size: 13vw;
+  }
+
+  .hero__text {
+    font-size: 1.5rem;
+  }
+
+  /* Service */
+  .service__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Works */
+  .works__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Footer */
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+}

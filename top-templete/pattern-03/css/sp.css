@@ -1,0 +1,60 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Smart Phone Style
+sp.css
+-----------------------------------------------------------------------
+  対象：767px以下
+---------------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+
+/* inner */
+.inner { padding: 0 4%; }
+
+/* section-title */
+.section-title    { margin-bottom: 8%; }
+.section-title h2 { font-size: 11vw; }
+.section-title p  { font-size: 1.2rem; }
+
+/* hero */
+.hero__inner    { padding: 12% 4% 10% 4%; }
+.hero__eyebrow  { font-size: 1.2rem; }
+.hero__title    { font-size: 13vw; line-height: 0.88em; }
+.hero__sub      { font-size: 1.5rem; margin: 14px 0 30px 0; }
+
+/* btn */
+.btn { padding: 13px 28px; font-size: 1.4rem; }
+
+/* intro */
+.intro__logo-img   { width: 35%; }
+.intro__logo-name  { font-size: 1.6rem; }
+.intro__desc       { font-size: 1.2rem; }
+.intro__catch      { font-size: 5.5vw; }
+.intro__catch-sub  { font-size: 1.3rem; }
+
+/* point */
+.point__ttl { font-size: 1.8rem; padding-top: 22px; }
+.point__txt { font-size: 1.25rem; }
+.point__num { font-size: 4.5rem; }
+.point__body { padding: 8% 6% 6% 6%; }
+
+/* lineup */
+.lineup__ttl   { font-size: 1.6rem; }
+.lineup__label { font-size: 1.7rem; }
+.lineup__txt   { font-size: 1.2rem; }
+
+/* scene */
+.scene__slide { width: 240px; height: 170px; }
+
+/* about */
+.about { padding: 8% 0; }
+
+/* company */
+.company__ttl       { font-size: 2.3rem; }
+.company__logo      { float: none; width: 80px; margin: 0 auto 12px auto; }
+.company__info      { margin: 0 auto; text-align: center; }
+.company__sns       { margin: 15px auto; }
+.company__contact-item { padding: 12px 10px; }
+.company__mail      { font-size: 1.8rem; }
+.company__notice    { font-size: 1.5rem; }
+
+} /* end 767px */

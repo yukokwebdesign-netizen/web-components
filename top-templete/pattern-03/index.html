@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>NATURA | 自然と人をつなぐ、エコツーリズム</title>
+<meta name="description" content="大自然の中で過ごす体験を通じて、人と自然のつながりを深めます。森林浴、登山、川下り、野生動物観察など、本物の自然体験を提供します。">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/import.css">
+</head>
+
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="header" class="header tr">
+  <div class="inner cl header__inner">
+
+    <!-- ロゴ -->
+    <div class="header__logo flx tr">
+      <a href="#">
+        <svg viewBox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:30px;width:auto;">
+          <text x="0" y="28" font-family="'Barlow Condensed',sans-serif" font-size="34" font-weight="600" font-style="italic" fill="#1a3a2a" letter-spacing="2">NATURA</text>
+        </svg>
+      </a>
+    </div>
+
+    <!-- ナビゲーション -->
+    <nav class="header__nav">
+      <ul class="header__nav-list pc">
+        <li><a href="#lineup">ツアー</a></li>
+        <li><a href="#scene">活動</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#company">アクセス</a></li>
+      </ul>
+
+      <!-- コンタクトボタン -->
+      <div class="header__contact">
+        <a href="#company" class="ls015">CONTACT</a>
+      </div>
+
+      <!-- バーガートリガー（SP） -->
+      <button class="burger-trigger sp" id="js-burger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<!-- バーガーメニュー（SP） -->
+<nav class="burger-menu" id="js-burger-menu">
+  <ul class="burger-menu__list">
+    <li><a href="#lineup">ツアー</a></li>
+    <li><a href="#scene">活動</a></li>
+    <li><a href="#about">私たちについて</a></li>
+    <li><a href="#company">アクセス</a></li>
+    <li><span class="burger-menu__close" id="js-burger-close">閉じる</span></li>
+  </ul>
+</nav>
+
+
+<!-- ========== MAIN ========== -->
+<article id="contents">
+
+  <!-- ① ヒーロー -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+
+    <!-- 山のシルエット SVG -->
+    <svg class="hero__bg-svg" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
+      <polygon points="0,500 280,180 420,280 560,120 700,240 860,80 1000,200 1160,100 1300,220 1440,140 1440,500" fill="#4a9a6a"/>
+      <polygon points="0,500 200,260 340,340 500,200 640,300 800,160 940,260 1100,170 1240,280 1440,200 1440,500" fill="#2d6a4f" opacity="0.7"/>
+      <circle cx="1200" cy="120" r="60" fill="#e9a94b" opacity="0.6"/>
+      <circle cx="1200" cy="120" r="80" fill="#e9a94b" opacity="0.15"/>
+    </svg>
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow italic ls02">ECO TOURISM · JAPAN</p>
+      <h1 class="hero__title italic">NATURA</h1>
+      <p class="hero__sub fw3">
+        大自然の中で、本物の体験を。<br>
+        森林浴・登山・野生動物観察など、<br>
+        あなただけの自然との出会い。
+      </p>
+      <a href="#lineup" class="btn btn--sub italic">ツアーを見る →</a>
+    </div>
+  </section>
+
+
+  <!-- ② イントロボックス -->
+  <section class="bg-beige">
+    <div class="intro">
+      <div class="intro__boxes cl anim-fade-up is-visible">
+
+        <!-- テキストボックス -->
+        <div class="intro__box intro__text-box">
+          <div class="intro__logo-wrap">
+            <div class="intro__logo-img">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" stroke="#4a7c59" stroke-width="1.5" fill="none"/>
+                <text x="40" y="50" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="20" font-weight="600" font-style="italic" fill="#f5f0e8">N</text>
+              </svg>
+            </div>
+            <p class="intro__logo-name">ナトゥーラ</p>
+          </div>
+          <p class="intro__desc">従来の観光旅行の枠を超え、人間と自然が本来持つつながりを取り戻す体験を提供します。プロのガイドと共に、普段では出会えない自然の姿に迫ります。</p>
+        </div>
+
+        <!-- 画像背景ボックス 1 -->
+        <div class="intro__box intro__img-box intro__img-box--1">
+          <div class="w100">
+            <h2 class="intro__catch font-display ls01">
+              <span class="italic fw3">FOR</span>REAL NATURE
+            </h2>
+            <p class="intro__catch-sub">本物の自然と向き合う体験</p>
+          </div>
+        </div>
+
+        <!-- 画像背景ボックス 2 -->
+        <div class="intro__box intro__img-box intro__img-box--2">
+          <div class="w100">
+            <h2 class="intro__catch font-display ls01">
+              <span class="italic fw3">FOR</span>SUSTAINABILITY
+            </h2>
+            <p class="intro__catch-sub">次世代へつなぐ豊かな自然環境</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ③ 3つの体験価値 -->
+    <div class="point inner">
+      <div class="anim-fade-up is-visible">
+        <h2 class="point__head fw6">心と身体を解放する、3つの体験価値</h2>
+        <p class="point__lead f18">自然の中でしか得られない、深い気づきと回復をお届けします。</p>
+
+        <ul class="point__list">
+
+          <li class="point__item">
+            <div class="point__img point__img--1 cover">
+              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
+                <path d="M50,200 Q100,80 150,120 Q200,40 250,80 Q300,20 350,60 L400,200Z" fill="#2d6a4f"/>
+                <circle cx="320" cy="55" r="25" fill="#e9a94b" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="point__body pos-re">
+              <p class="point__num italic font-display pos-ab ls007">01</p>
+              <h3 class="point__ttl fw6">森の癒し・フィトンチッド体験</h3>
+              <p class="point__txt">樹木が放つフィトンチッドを全身で感じる森林浴プログラム。ストレス軽減・免疫力向上など、科学的に証明された自然の恵みを体感できます。</p>
+            </div>
+          </li>
+
+          <li class="point__item">
+            <div class="point__img point__img--2 cover">
+              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
+                <polygon points="50,200 200,30 350,200" fill="#1a4a2a"/>
+                <polygon points="100,200 200,70 300,200" fill="#2d6a4f" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="point__body pos-re">
+              <p class="point__num italic font-display pos-ab ls007">02</p>
+              <h3 class="point__ttl fw6">登山・トレッキングガイドツアー</h3>
+              <p class="point__txt">初心者から上級者まで対応した多彩なルート設定。地元の地形・植生・動物に精通したガイドが安全かつ深い山岳体験をサポートします。</p>
+            </div>
+          </li>
+
+          <li class="point__item">
+            <div class="point__img point__img--3 cover">
+              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
+                <path d="M0,140 Q80,100 160,130 Q240,80 320,110 Q370,90 400,120 L400,200 L0,200Z" fill="#1a5a3a"/>
+              </svg>
+            </div>
+            <div class="point__body pos-re">
+              <p class="point__num italic font-display pos-ab ls007">03</p>
+              <h3 class="point__ttl fw6">野生動物・野鳥観察プログラム</h3>
+              <p class="point__txt">国内希少種をはじめ多様な野生動物との静かな出会い。望遠鏡・双眼鏡を使ったバードウォッチングや動物の行動観察など、知的好奇心を刺激します。</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ④ ツアーラインナップ -->
+  <section class="lineup section-pad cl" id="lineup">
+    <div class="inner">
+      <hgroup class="section-title section-title--light">
+        <h2>LINE UP</h2>
+        <p>ツアーラインナップ</p>
+      </hgroup>
+    </div>
+
+    <div class="lineup__row cl anim-fade-left is-visible">
+
+      <!-- 左カラム -->
+      <div class="lineup__col">
+        <div class="lineup__img lineup__img--1 cover">
+          <svg viewBox="0 0 600 200" style="width:100%;height:100%;opacity:0.6;">
+            <circle cx="480" cy="50" r="35" fill="#e9a94b" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="lineup__body cl">
+          <div class="lineup__thumb">
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="160" rx="4" fill="#1a3a2a"/>
+              <path d="M20,160 Q40,80 60,100 Q80,50 100,70 L120,160Z" fill="#4a9a6a" opacity="0.8"/>
+              <text x="60" y="40" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="14" font-weight="600" fill="#f5f0e8" font-style="italic">FOREST</text>
+            </svg>
+          </div>
+          <div class="lineup__text">
+            <p class="lineup__label fw3 italic text-sub ls01">FOREST TOUR</p>
+            <h3 class="lineup__ttl fw6">深層の森へ——<br>感覚を開くトレイル体験</h3>
+            <p class="lineup__txt">樹齢数百年の巨木が立ち並ぶ原生林へ。早朝の静寂の中、鳥のさえずりと土の香りに包まれながら、日常とは異なる時間軸で自然を歩きます。少人数制で丁寧にご案内します。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右カラム -->
+      <div class="lineup__col">
+        <div class="lineup__img lineup__img--2 cover">
+          <svg viewBox="0 0 600 200" style="width:100%;height:100%;opacity:0.6;">
+            <polygon points="300,20 380,140 220,140" fill="#5a9a6a" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="lineup__body lineup__body--right cl">
+          <div class="lineup__text">
+            <p class="lineup__label fw3 italic text-sub ls01">MOUNTAIN TOUR</p>
+            <h3 class="lineup__ttl fw6">山頂から望む——<br>大地と空の境界線</h3>
+            <p class="lineup__txt">雲の上に広がる360度の絶景と、稜線を渡る風の感触。体力・経験に合わせたルートを選び、山を「征服」するのではなく、山と「対話」する登山文化を体験いただけます。</p>
+          </div>
+          <div class="lineup__thumb">
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="160" rx="4" fill="#1a3a2a"/>
+              <polygon points="60,20 100,140 20,140" fill="#4a9a6a" opacity="0.8"/>
+              <text x="60" y="158" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="12" font-weight="600" fill="#f5f0e8" font-style="italic">MOUNTAIN</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ⑤ 活動シーン -->
+  <section class="scene section-pad cl" id="scene">
+    <div class="inner">
+      <hgroup class="section-title section-title--dark">
+        <h2>ACTIVITY</h2>
+        <p>活動シーン</p>
+      </hgroup>
+
+      <!-- スライダー（PC） -->
+      <div class="scene__slider-wrap pc">
+        <div class="scene__slides">
+          <div class="scene__slide scene__slide--forest cover"></div>
+          <div class="scene__slide scene__slide--mountain cover"></div>
+          <div class="scene__slide scene__slide--river cover"></div>
+          <div class="scene__slide scene__slide--wildlife cover"></div>
+          <div class="scene__slide scene__slide--sunrise cover"></div>
+          <div class="scene__slide scene__slide--lake cover"></div>
+          <!-- 無限ループ用クローン -->
+          <div class="scene__slide scene__slide--forest cover"></div>
+          <div class="scene__slide scene__slide--mountain cover"></div>
+          <div class="scene__slide scene__slide--river cover"></div>
+          <div class="scene__slide scene__slide--wildlife cover"></div>
+          <div class="scene__slide scene__slide--sunrise cover"></div>
+          <div class="scene__slide scene__slide--lake cover"></div>
+        </div>
+      </div>
+
+      <!-- アクティビティリスト -->
+      <ul class="scene__list cl anim-fade-up is-visible">
+        <li class="scene__item">
+          <p class="scene__label">TREKKING</p>
+          <h3 class="scene__name fw5">トレッキング</h3>
+          <p class="scene__txt f14">初心者から経験者まで、体力や目的に合わせた多彩なコースで原生の自然を歩きます。</p>
+        </li>
+        <li class="scene__item">
+          <p class="scene__label">BIRDING</p>
+          <h3 class="scene__name fw5">野鳥観察</h3>
+          <p class="scene__txt f14">早朝の静かな森で、希少な野鳥たちとの出会いを求めて。専門ガイドが種の解説も丁寧に行います。</p>
+        </li>
+        <li class="scene__item">
+          <p class="scene__label">KAYAKING</p>
+          <h3 class="scene__name fw5">カヤック</h3>
+          <p class="scene__txt f14">清らかな川・湖でのカヤック体験。水面から見る景色は格別で、水中の生態系も間近に観察できます。</p>
+        </li>
+        <li class="scene__item">
+          <p class="scene__label">CAMPING</p>
+          <h3 class="scene__name fw5">キャンプ</h3>
+          <p class="scene__txt f14">焚き火を囲み、満天の星空の下で過ごす夜。日常のスクリーンから離れた、深い静寂の時間を体験します。</p>
+        </li>
+        <li class="scene__item">
+          <p class="scene__label">EDUCATION</p>
+          <h3 class="scene__name fw5">環境学習</h3>
+          <p class="scene__txt f14">学校・企業向けの自然環境教育プログラム。生態系・持続可能性について現場で学ぶ貴重な機会です。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ⑥ NATURAについて -->
+  <section class="about section-pad text-cream" id="about">
+    <div class="inner anim-fade-up is-visible">
+      <hgroup class="section-title section-title--light">
+        <h2>ABOUT</h2>
+        <p>私たちについて</p>
+      </hgroup>
+      <div class="about__inner">
+        <p class="about__lead f18">
+          NATURAは、自然体験と環境教育を通じて人と自然のつながりを取り戻すことを使命とするエコツーリズム団体です。
+          2015年の創立以来、年間3,000名以上の方々に、忘れられない自然体験をお届けしてきました。
+        </p>
+        <p class="about__txt f16">
+          すべてのプログラムは、地域の生態系への影響を最小限に抑えた「Leave No Trace」原則に基づいて設計されています。
+          自然を訪れる人々が、自然を未来へつなぐ担い手となれるよう、深い体験と学びをご提供します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑦ コンタクト・アクセス -->
+  <section class="company section-pad" id="company">
+    <div class="inner">
+
+      <h2 class="company__ttl ls01">
+        CONTACT & ACCESS<span>アクセス・お問い合わせ</span>
+      </h2>
+
+      <div class="company__profile cl">
+        <div class="company__logo flx" style="height:70px;">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="38" stroke="#4a7c59" stroke-width="1.5" fill="none"/>
+            <text x="40" y="50" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="600" font-style="italic" fill="#f5f0e8">N</text>
+          </svg>
+        </div>
+        <div class="company__info flx" style="height:70px;">
+          <div class="w100">
+            <h3 class="company__name fw6">NATURA エコツーリズム</h3>
+            <p class="f15">〒500-8833 岐阜県瑞穂市大宮町1-1　Tel: 058-XXX-XXXX</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SNS -->
+      <ul class="company__sns cl">
+        <li class="company__sns-item tr"><a href="#" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="rgba(245,240,232,0.6)"/></svg>
+        </a></li>
+        <li class="company__sns-item tr"><a href="#" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><path d="M18 2H15C13.3 2 12 3.3 12 5V8H9V12H12V22H16V12H19L20 8H16V5C16 4.4 16.4 4 17 4H20V2H18Z"/></svg>
+        </a></li>
+        <li class="company__sns-item tr"><a href="#" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a></li>
+        <li class="company__sns-item tr"><a href="#" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </a></li>
+      </ul>
+
+      <p class="company__notice fw6">ご予約・ご質問など、お気軽にお問い合わせください</p>
+
+      <ul class="company__contact cl">
+        <li class="company__contact-item">
+          <p class="company__mail fw5 italic ls007">
+            <a href="mailto:info@natura-eco.jp">info@natura-eco.jp</a>
+          </p>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+</article>
+
+
+<!-- ========== FOOTER ========== -->
+<footer id="footer" class="footer">
+  <div class="inner cl footer__inner">
+    <p class="footer__logo flx" style="height:28px;">
+      <svg viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:22px;width:auto;">
+        <text x="0" y="22" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="600" font-style="italic" fill="rgba(245,240,232,0.5)" letter-spacing="2">NATURA</text>
+      </svg>
+    </p>
+    <p class="footer__copy ls007" style="height:28px;">© NATURA ECO TOURISM</p>
+  </div>
+</footer>
+
+
+<script>
+/* === ヘッダー スクロール縮小 === */
+window.addEventListener('scroll', function () {
+  var hdr = document.getElementById('header');
+  hdr.classList.toggle('is-small', window.scrollY > 80);
+});
+
+/* === スムーススクロール === */
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+/* === スクロールフェードイン（IntersectionObserver） === */
+var observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right').forEach(function (el) {
+  observer.observe(el);
+});
+
+/* === バーガーメニュー === */
+var burgerBtn  = document.getElementById('js-burger');
+var burgerMenu = document.getElementById('js-burger-menu');
+var burgerClose = document.getElementById('js-burger-close');
+
+if (burgerBtn && burgerMenu) {
+  burgerBtn.addEventListener('click', function () {
+    burgerMenu.classList.toggle('is-open');
+    burgerBtn.classList.toggle('is-open');
+  });
+  burgerClose.addEventListener('click', function () {
+    burgerMenu.classList.remove('is-open');
+    burgerBtn.classList.remove('is-open');
+  });
+  burgerMenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      burgerMenu.classList.remove('is-open');
+      burgerBtn.classList.remove('is-open');
+    });
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,541 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+PC Style
+pc.css
+-----------------------------------------------------------------------
+  対象：769px以上（モバイルファーストではなく元サイト設計を踏襲）
+
+  [セクション対応表]
+  .hero          → ① ヒーロー
+  .intro         → ② イントロボックス
+  .point         → ③ 3つの体験価値
+  .lineup        → ④ ツアーラインナップ
+  .scene         → ⑤ 活動シーン
+  .about         → ⑥ NATURAについて
+  .company       → ⑦ コンタクト・アクセス
+---------------------------------------------------------------------*/
+
+/*===========================================================
+    フォントサイズスケール（PC基準）
+    ※ tb.css / sp.css でブレークポイントごとに上書き
+===========================================================*/
+.hero__title        { font-size: 9rem; }
+.hero__sub          { font-size: 2.4rem; }
+.hero__eyebrow      { font-size: 1.4rem; }
+.section-title h2   { font-size: 5.5rem; }
+.section-title p    { font-size: 1.5rem; }
+.point__num         { font-size: 6rem; }
+.point__ttl         { font-size: 2rem; }
+.point__lead        { font-size: 1.7rem; }
+.point__head        { font-size: 3.5rem; }
+.lineup__label      { font-size: 2rem; }
+.lineup__ttl        { font-size: 2rem; }
+.scene__label       { font-size: 2.6rem; }
+.scene__name        { font-size: 1.5rem; }
+.company__name      { font-size: 1.9rem; }
+.company__mail      { font-size: 2.6rem; }
+.company__notice    { font-size: 1.7rem; }
+.company__ttl       { font-size: 2.8rem; }
+
+/*===========================================================
+    共通セクション余白
+===========================================================*/
+.section-pad {
+    padding: 5% 0;
+}
+
+/*===========================================================
+    ① hero（ヒーローセクション）
+===========================================================*/
+.hero {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* 背景レイヤー（z-index 0〜1 は bg / SVG） */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--grad-hero);
+    z-index: 0;
+}
+.hero__bg-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.18;
+}
+
+/* テキストエリア */
+.hero__inner {
+    position: relative;
+    z-index: 2;
+    padding: 8% var(--inner-pad);
+    max-width: var(--inner-width);
+    margin: auto;
+    width: 100%;
+}
+.hero__eyebrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: rgba(245, 240, 232, 0.6);
+    margin-bottom: 18px;
+}
+.hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 0.9em;
+    letter-spacing: 0.05em;
+    color: var(--color-beige);
+    margin-bottom: 0;
+}
+.hero__sub {
+    color: rgba(245, 240, 232, 0.75);
+    font-weight: 300;
+    line-height: 1.4em;
+    margin: 18px 0 40px 0;
+    max-width: 600px;
+}
+
+/* 右側の画像（PC のみ） */
+.hero__img {
+    position: absolute;
+    right: -5%;
+    top: 0;
+    bottom: 0;
+    width: 48%;
+    z-index: 1;
+    overflow: hidden;
+}
+.hero__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*===========================================================
+    ② intro（ブランドイントロ 3カラム）
+===========================================================*/
+.intro {
+    padding: 0 0 0 var(--inner-pad);
+    margin: -8% 0 4% 0;
+    position: relative;
+    z-index: 3;
+}
+
+.intro__boxes {
+    background: var(--color-black);
+    display: flex;
+}
+.intro__box {
+    width: 33.333%;
+}
+
+/* テキストボックス */
+.intro__text-box {
+    padding: 5% 4%;
+}
+.intro__logo-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.intro__logo-img {
+    width: 40%;
+    border-right: 1px solid rgba(245, 240, 232, 0.2);
+    margin-right: 5%;
+    padding-right: 5%;
+    max-width: 200px;
+}
+.intro__logo-name {
+    font-size: 1.8rem;
+    color: var(--color-beige);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+.intro__desc {
+    font-size: 1.3rem;
+    color: rgba(245, 240, 232, 0.7);
+    line-height: 1.75em;
+}
+
+/* 画像背景ボックス（中・右） */
+.intro__img-box {
+    padding: 5% 4%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.intro__img-box--1 {
+    background:
+        linear-gradient(rgba(13, 43, 30, 0.55), rgba(13, 43, 30, 0.55)),
+        linear-gradient(135deg, #2d6a4f 0%, var(--color-main) 100%);
+}
+.intro__img-box--2 {
+    background:
+        linear-gradient(rgba(26, 58, 42, 0.45), rgba(26, 58, 42, 0.45)),
+        linear-gradient(135deg, #3a7a52 0%, #2d5a3d 100%);
+}
+.intro__catch {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-beige);
+    line-height: 1.1em;
+    margin-bottom: 12px;
+}
+.intro__catch span {
+    display: block;
+    font-size: 0.65em;
+    margin-bottom: 5px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1em;
+}
+.intro__catch-sub {
+    font-size: 1.45rem;
+    color: rgba(245, 240, 232, 0.8);
+    line-height: 1.35em;
+    text-align: center;
+}
+
+/*===========================================================
+    ③ point（3つの体験価値）
+===========================================================*/
+.point {
+    padding: 0 var(--inner-pad) 6%;
+}
+.point__head {
+    font-weight: 600;
+    line-height: 1.35em;
+    text-align: center;
+    padding-bottom: 10px;
+    color: var(--color-black);
+}
+.point__lead {
+    line-height: 1.35em;
+    text-align: center;
+    margin-bottom: 3%;
+    color: #3a5a3a;
+}
+.point__list {
+    display: flex;
+    gap: 2%;
+}
+.point__item {
+    width: 32%;
+    background: var(--color-white);
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.12));
+}
+
+/* サムネイル */
+.point__img {
+    height: 20vw;
+    background-size: cover;
+    background-position: center;
+}
+.point__img--1 { background: linear-gradient(160deg, #4a9a6a 0%, #2d6a4f 40%, var(--color-main) 100%); }
+.point__img--2 { background: linear-gradient(160deg, #5a9e7e 0%, #2d7a5f 40%, #1a4a2a 100%); }
+.point__img--3 { background: linear-gradient(160deg, #3a8a5a 0%, #1a5a3a 40%, #0d2b1e 100%); }
+
+/* テキストブロック */
+.point__body {
+    padding: 7% 6%;
+    position: relative;
+}
+.point__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    color: var(--color-sub);
+    line-height: 1em;
+    position: absolute;
+    top: -0.6em;
+}
+.point__ttl {
+    font-weight: 600;
+    color: var(--color-black);
+    line-height: 1.3em;
+    margin-bottom: 15px;
+    padding-top: 28px;
+}
+.point__txt {
+    font-size: 1.35rem;
+    line-height: 1.75em;
+    color: #3a4a3a;
+}
+
+/*===========================================================
+    ④ lineup（ツアーラインナップ）
+===========================================================*/
+.lineup {
+    background: var(--color-black);
+}
+.lineup__row {
+    display: flex;
+}
+.lineup__col {
+    width: 50%;
+    padding: 0 2%;
+}
+.lineup__col:last-child {
+    padding: 0 2% 0 0;
+}
+
+/* サムネイル */
+.lineup__img {
+    height: 18vw;
+    background-size: cover;
+    background-position: center;
+}
+.lineup__img--1 { background: linear-gradient(135deg, #2d8a5f 0%, #1a5a3a 50%, #0d2b1e 100%); }
+.lineup__img--2 { background: linear-gradient(135deg, #5a9e6a 0%, #3a7a4a 50%, var(--color-main) 100%); }
+
+/* テキストブロック */
+.lineup__body {
+    display: flex;
+    gap: 5%;
+    padding: 0 4%;
+    margin-top: 0;
+}
+.lineup__body--right {
+    flex-direction: row-reverse;
+    padding: 0 0 0 4%;
+}
+.lineup__thumb {
+    width: 38%;
+    flex-shrink: 0;
+    margin-top: -15%;
+}
+.lineup__thumb img {
+    width: 100%;
+}
+.lineup__text {
+    flex: 1;
+    padding-top: 20px;
+}
+.lineup__label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    padding-bottom: 10px;
+    line-height: 1em;
+}
+.lineup__ttl {
+    font-weight: 600;
+    color: var(--color-beige);
+    line-height: 1.3em;
+    margin-bottom: 12px;
+}
+.lineup__txt {
+    font-size: 1.3rem;
+    color: rgba(245, 240, 232, 0.75);
+    line-height: 1.75em;
+}
+
+/*===========================================================
+    ⑤ scene（活動シーン）
+===========================================================*/
+.scene {
+    background: var(--color-beige);
+}
+
+/* スライダー */
+.scene__slider-wrap {
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.scene__slides {
+    display: flex;
+    width: max-content;
+    animation: slideLeft 60s linear infinite;
+}
+@keyframes slideLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.scene__slide {
+    width: 400px;
+    height: 280px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    margin-right: 4px;
+}
+
+/* スライド背景バリエーション */
+.scene__slide--forest   { background: linear-gradient(160deg, #4a9a5a 0%, #2d6a3a 50%, #0d2b0f 100%); }
+.scene__slide--mountain { background: linear-gradient(160deg, #5a8a9a 0%, #3a5a6a 50%, #1a2b3a 100%); }
+.scene__slide--river    { background: linear-gradient(160deg, #4a7a9a 0%, #2d5a7a 50%, #0d2b4a 100%); }
+.scene__slide--wildlife { background: linear-gradient(160deg, #6a8a4a 0%, #4a6a3a 50%, #1a2b1a 100%); }
+.scene__slide--sunrise  { background: linear-gradient(160deg, var(--color-sub) 0%, #9a5a0d 50%, #3a1a05 100%); }
+.scene__slide--lake     { background: linear-gradient(160deg, #4a7a8a 0%, #2d5a6a 50%, #0d1b2a 100%); }
+
+/* アクティビティリスト */
+.scene__list {
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 1px solid #c8bfa8;
+}
+.scene__item {
+    width: 20%;
+    padding: 5% 2%;
+    border-right: 1px solid #c8bfa8;
+    box-sizing: border-box;
+}
+.scene__label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    color: var(--color-main);
+    line-height: 1em;
+    display: table;
+    padding-bottom: 8px;
+    margin: 0 auto 8px auto;
+    border-bottom: 1px solid var(--color-sub);
+}
+.scene__name {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 22px;
+    line-height: 1em;
+}
+.scene__txt {
+    font-size: 1.35rem;
+    line-height: 1.7em;
+    color: #3a4a3a;
+}
+
+/*===========================================================
+    ⑥ about（NATURAについて）
+===========================================================*/
+.about {
+    background: var(--color-main);
+    padding: 6% 0;
+}
+.about__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about__lead {
+    line-height: 2em;
+    color: rgba(245, 240, 232, 0.85);
+    margin-bottom: 30px;
+}
+.about__txt {
+    line-height: 2em;
+    color: rgba(245, 240, 232, 0.65);
+}
+
+/*===========================================================
+    ⑦ company（コンタクト・アクセス）
+===========================================================*/
+.company {
+    background: var(--color-main);
+}
+.company__ttl {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: table;
+    margin: 0 auto 40px auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.3);
+    color: var(--color-beige);
+    line-height: 1em;
+}
+.company__ttl span {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-top: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1em;
+}
+.company__profile {
+    display: table;
+    margin: auto;
+}
+.company__logo {
+    width: 100px;
+    float: left;
+}
+.company__info {
+    margin-left: 120px;
+}
+.company__name {
+    font-weight: 600;
+    color: var(--color-beige);
+    padding-bottom: 5px;
+    line-height: 1em;
+}
+.company__info p {
+    color: rgba(245, 240, 232, 0.7);
+    font-size: 1.4rem;
+}
+
+/* SNSリスト */
+.company__sns {
+    max-width: 700px;
+    margin: 25px auto 35px auto;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    display: flex;
+}
+.company__sns-item {
+    flex: 1;
+    padding: 10px 5px;
+    text-align: center;
+    border-right: 1px solid rgba(245, 240, 232, 0.15);
+    transition: background var(--transition);
+}
+.company__sns-item:last-child {
+    border-right: none;
+}
+.company__sns-item:hover {
+    background: rgba(245, 240, 232, 0.08);
+}
+.company__sns-item img {
+    max-width: 22px;
+    width: 30%;
+    margin: auto;
+}
+
+/* コンタクトエリア */
+.company__notice {
+    line-height: 1.4em;
+    padding: 8px 0 18px 0;
+    text-align: center;
+    color: rgba(245, 240, 232, 0.85);
+}
+.company__contact {
+    max-width: 700px;
+    margin: auto;
+}
+.company__contact-item {
+    background: rgba(245, 240, 232, 0.07);
+    padding: 18px 10px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.company__mail {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    color: var(--color-beige);
+}

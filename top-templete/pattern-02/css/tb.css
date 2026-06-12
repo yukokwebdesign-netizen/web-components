@@ -1,0 +1,31 @@
+/* ==========================================
+   tb.css — 1024px以下の上書き
+========================================== */
+
+@media screen and (max-width: 1024px) {
+
+  :root {
+    --inner-pd: 32px;
+  }
+
+  section {
+    padding-block: 80px;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: 7rem;
+  }
+
+  /* Service */
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  /* Works */
+  .works__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Animate Style
+animate.css
+-----------------------------------------------------------------------
+  スクロール連動のフェードインアニメーション。
+  JSで .is-visible を付与することで発火する設計。
+
+  使い方:
+    HTML: <div class="anim-fade-up">...</div>
+    JS:   el.classList.add('is-visible')  ← IntersectionObserver 推奨
+---------------------------------------------------------------------*/
+
+/* --- ページロード時フェード（#contents 全体） --- */
+#contents {
+    animation: fadeIn 1.5s ease 0s 1 normal;
+}
+
+/* --- 各アニメーションクラス（初期状態） --- */
+.anim-fade-up   { opacity: 0; transform: translate(0, 40px);  transition: all 1.5s; }
+.anim-fade-left { opacity: 0; transform: translate(-50px, 0); transition: all 1s; }
+.anim-fade-right{ opacity: 0; transform: translate(50px, 0);  transition: all 1.5s; }
+
+/* --- 発火後（JS で .is-visible を付与） --- */
+.anim-fade-up.is-visible,
+.anim-fade-left.is-visible,
+.anim-fade-right.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* --- キーフレーム --- */
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
