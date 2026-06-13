@@ -61,7 +61,7 @@ pc.css
 ===========================================================*/
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 1080px;
     overflow: hidden;
     display: flex;
     align-items: center;

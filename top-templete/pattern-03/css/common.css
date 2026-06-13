@@ -10,7 +10,7 @@ common.css
   ・ボタン・見出しなど、複数ページで共通のパーツを変更する
 
   [構成]
-  1. CSS カスタムプロパティ（変数）← ★ここを変えるだけで色が変わる！
+  1. CSS カスタムプロパティ（変数）
   2. ベーススタイル
   3. レイアウトユーティリティ
   4. カラー・タイポグラフィユーティリティ
@@ -22,19 +22,15 @@ common.css
 
 /*===========================================================
     1. CSS カスタムプロパティ（変数）
-    ★ここを変更するだけでサイト全体の色・書体が変わります
-    ────────────────────────────────────
-    色を変えたいとき → --color-main / --color-sub を変更
-    フォントを変えたいとき → --font-base / --font-display を変更
 ===========================================================*/
 :root {
-    /* --- メインカラー（深緑）：ヘッダー・ボタン・見出し等に使用 --- */
+    /* --- メインカラー：ヘッダー・ボタン・見出し等に使用 --- */
     --color-main:   #1a3a2a;
 
-    /* --- サブカラー（アンバー）：アクセント・ボタン等に使用 --- */
+    /* --- サブカラー：アクセント・ボタン等に使用 --- */
     --color-sub:    #c8881e;
 
-    /* --- ベージュ：サイト全体の背景色 --- */
+    /* --- サイト全体の背景色 --- */
     --color-base:  #f5f0e8;
 
     --color-white:  #ffffff;
@@ -75,21 +71,16 @@ common.css
 
 /*===========================================================
     2. ベーススタイル
-    ・body 全体のフォント・色・背景・行間を指定
-    ・padding-top はヘッダーの高さ分（固定ヘッダーの下に隠れないよう）
 ===========================================================*/
 body {
     font-family: var(--font-base);
     color: var(--color-black);
     background: var(--color-base);
     line-height: 1.8em;
-    padding-top: 110px; /* ← ヘッダーの高さに合わせて調整 */
 }
 
 /*===========================================================
     3. レイアウトユーティリティ
-    ・.inner：コンテンツを中央に揃えて最大幅を制限するラッパー
-    ・.pc / .sp：デバイスによる表示切り替え
 ===========================================================*/
 
 /* コンテンツ幅の中央寄せラッパー */
@@ -113,7 +104,6 @@ body {
 
 /*===========================================================
     4. カラー・タイポグラフィユーティリティ
-    ・クラスを HTML に付けるだけで色・書体などを適用できる
 ===========================================================*/
 
 /* --- テキストカラー --- */
@@ -170,15 +160,6 @@ body {
     5. 共通コンポーネント
 ===========================================================*/
 
-/* ----- section-title（各セクションの見出し）-----
-   使い方:
-   <hgroup class="section-title section-title--dark">
-     <h2>SECTION</h2>
-     <p>日本語タイトル</p>
-   </hgroup>
-   ・--dark：黒背景向け（白文字）/ --light：明るい背景向け（黒文字）
-   ・文字サイズは pc.css / sp.css で上書きされます
-*/
 .section-title {
     text-align: center;
     display: table;
@@ -207,12 +188,6 @@ body {
 .section-title--dark  { color: var(--color-black); }
 .section-title--light { color: var(--color-base); }
 
-/* ----- btn（ボタン共通）-----
-   使い方:
-   <a class="btn btn--main" href="#">ツアーを見る</a>  ← メインカラー（緑）ボタン
-   <a class="btn btn--sub"  href="#">予約する</a>      ← サブカラー（アンバー）ボタン
-   ・色を変えたい → --grad-main / --grad-sub を変更してください
-*/
 .btn {
     display: inline-block;
     padding: 16px 40px;
@@ -231,10 +206,6 @@ body {
 
 /*===========================================================
     6. ヘッダー
-    ・position: fixed で画面上部に固定表示
-    ・スクロールすると JS で .is-small クラスが付き縮小する
-    ・ロゴ幅・高さ：.header__logo img を変更
-    ・ナビリンクのフォントサイズ：.header__nav-list li を変更
 ===========================================================*/
 .header {
     padding: 35px 0;
@@ -284,7 +255,7 @@ body {
     display: flex;
     align-items: center;
 }
-/* 各ナビ項目（区切り線はSVGではなく background で描画） */
+/* 各ナビ項目 */
 .header__nav-list li {
     padding: 0 15px;
     height: 20px;
@@ -304,7 +275,7 @@ body {
     color: var(--color-main);
 }
 
-/* コンタクトボタン（ヘッダー右端） */
+/* コンタクトボタン */
 .header__contact {
     height: 30px;
     margin-left: 10px;
@@ -324,12 +295,9 @@ body {
 
 /*===========================================================
     7. バーガーメニュー（SP）
-    ・768px以下で表示（tb.css で .burger-trigger を display:flex に）
-    ・メニューの開閉は JS で .is-open クラスを付与して制御
-    ・メニュー項目の追加は HTML の .burger-menu__list に <li> を追加
 ===========================================================*/
 .burger-trigger {
-    display: none; /* 768px以下で tb.css が display:flex に上書き */
+    display: none;
     width: 35px;
     height: 24px;
     position: relative;
@@ -350,12 +318,12 @@ body {
 .burger-trigger span:nth-child(2) { top: 11px; }
 .burger-trigger span:nth-child(3) { top: 22px; }
 
-/* 開いたとき（JS で .is-open を付与） */
+/* 開いたとき */
 .burger-trigger.is-open span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
 .burger-trigger.is-open span:nth-child(2) { opacity: 0; }
 .burger-trigger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
 
-/* バーガーメニュー本体（画面全体を覆うオーバーレイ） */
+/* バーガーメニュー本体 */
 .burger-menu {
     display: none;
     position: fixed;
@@ -385,8 +353,6 @@ body {
 
 /*===========================================================
     8. フッター
-    ・背景色：--color-main
-    ・ロゴ・コピーライトは HTML で変更
 ===========================================================*/
 .footer {
     padding: 22px 0;

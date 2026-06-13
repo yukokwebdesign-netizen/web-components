@@ -5,27 +5,16 @@ animate.css
 -----------------------------------------------------------------------
   ★ このファイルでできること
   ────────────────────────────────────────
-  ・スクロールに連動したフェードインアニメーションを管理する
+  ・アニメーションを管理する
   ・アニメーションの速度・動き幅を変更する
-
-  [仕組み]
-  1. HTML に .anim-fade-up などのクラスを付ける（初期状態：非表示）
-  2. JS（index.html 末尾）の IntersectionObserver が画面内に入ったことを検知
-  3. .is-visible クラスが付与され → アニメーション発火（表示される）
-
-  [使い方]
-  HTML: <div class="anim-fade-up">...</div>
-  ※ JS が自動で .is-visible を付けます。手動では付けないでください。
 ---------------------------------------------------------------------*/
 
-/* --- ページ読み込み時フェード（#contents 全体） --- */
+/* --- ページ読み込み時フェード --- */
 #contents {
     animation: fadeIn 1.5s ease 0s 1 normal;
 }
 
 /* --- 各アニメーションクラス（初期状態：非表示） ---
-   ▼ 動きの量を変えたい場合は translate の値を変更
-   ▼ 速度を変えたい場合は transition の秒数を変更 */
 .anim-fade-up   { opacity: 0; transform: translate(0, 40px);  transition: all 1.5s; }
 .anim-fade-left { opacity: 0; transform: translate(-50px, 0); transition: all 1s; }
 .anim-fade-right{ opacity: 0; transform: translate(50px, 0);  transition: all 1.5s; }
