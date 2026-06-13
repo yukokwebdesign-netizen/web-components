@@ -3,11 +3,15 @@
 PC Style
 pc.css
 -----------------------------------------------------------------------
-  対象：769px以上（モバイルファーストではなく元サイト設計を踏襲）
+  ★ このファイルでできること
+  ────────────────────────────────────────
+  ・PC 表示（769px以上）のレイアウト・サイズを変更する
+  ・各セクションの背景色・背景画像を変更する
+  ・文字サイズのベース値を変更する（tb.css / sp.css で上書きされる）
 
   [セクション対応表]
-  .hero          → ① ヒーロー
-  .intro         → ② イントロボックス
+  .hero          → ① ヒーロー（トップメインビジュアル）
+  .intro         → ② イントロボックス（ブランド紹介3カラム）
   .point         → ③ 3つの体験価値
   .lineup        → ④ ツアーラインナップ
   .scene         → ⑤ 活動シーン
@@ -17,7 +21,8 @@ pc.css
 
 /*===========================================================
     フォントサイズスケール（PC基準）
-    ※ tb.css / sp.css でブレークポイントごとに上書き
+    ・tb.css / sp.css のメディアクエリで上書きされます
+    ・この値を変えると PC での文字サイズが変わります
 ===========================================================*/
 .hero__title        { font-size: 9rem; }
 .hero__sub          { font-size: 2.4rem; }
@@ -39,13 +44,20 @@ pc.css
 
 /*===========================================================
     共通セクション余白
+    ・.section-pad クラスを HTML に付けると上下 5% の余白が入る
 ===========================================================*/
 .section-pad {
     padding: 5% 0;
 }
 
 /*===========================================================
-    ① hero（ヒーローセクション）
+    ① hero（ヒーロー）
+    ────────────────────────────────────
+    ・背景色：.hero__bg の background（common.css の --grad-hero を削除したため
+      直接 background: linear-gradient(...) で指定してください）
+    ・右側の画像：.hero__img img の src を変更（HTML）
+    ・テキストの左右位置：.hero__inner の padding を変更
+    ・最小高さ：min-height を変更
 ===========================================================*/
 .hero {
     position: relative;
@@ -55,20 +67,13 @@ pc.css
     align-items: center;
 }
 
-/* 背景レイヤー（z-index 0〜1 は bg / SVG） */
+/* 背景グラデーション
+   ▼ 色を変えたい場合はここを直接変更してください */
 .hero__bg {
     position: absolute;
     inset: 0;
-    background: var(--grad-hero);
+    background: linear-gradient(135deg, #0d2b1e 0%, #1a3a2a 40%, #2d5a3d 70%, #3a7a52 100%);
     z-index: 0;
-}
-.hero__bg-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.18;
 }
 
 /* テキストエリア */
@@ -105,7 +110,9 @@ pc.css
     max-width: 600px;
 }
 
-/* 右側の画像（PC のみ） */
+/* 右側の画像（PC のみ表示）
+   ▼ HTML の .hero__img 内 <img> の src を変更してください
+   ▼ 位置・幅を変えたい場合は right / width を変更 */
 .hero__img {
     position: absolute;
     right: -5%;
@@ -123,6 +130,10 @@ pc.css
 
 /*===========================================================
     ② intro（ブランドイントロ 3カラム）
+    ────────────────────────────────────
+    ・背景色（中・右カラム）：.intro__img-box--1 / --2 の background を変更
+    ・背景画像に変える場合：background-image:url('images/〇〇.jpg') を追加
+    ・3カラムの幅：.intro__box の width（現在33.333%）を変更
 ===========================================================*/
 .intro {
     padding: 0 0 0 var(--inner-pad);
@@ -139,7 +150,7 @@ pc.css
     width: 33.333%;
 }
 
-/* テキストボックス */
+/* テキストボックス（左カラム） */
 .intro__text-box {
     padding: 5% 4%;
 }
@@ -148,6 +159,7 @@ pc.css
     align-items: center;
     margin-bottom: 20px;
 }
+/* ▼ ロゴ画像エリア：幅を変えたい場合は width を変更 */
 .intro__logo-img {
     width: 40%;
     border-right: 1px solid rgba(245, 240, 232, 0.2);
@@ -167,7 +179,9 @@ pc.css
     line-height: 1.75em;
 }
 
-/* 画像背景ボックス（中・右） */
+/* 画像背景ボックス（中・右カラム）
+   ▼ 背景色を変えたい場合は linear-gradient の色を変更
+   ▼ 背景画像を使う場合：background-image:url('images/〇〇.jpg') を追加 */
 .intro__img-box {
     padding: 5% 4%;
     background-size: cover;
@@ -210,6 +224,11 @@ pc.css
 
 /*===========================================================
     ③ point（3つの体験価値）
+    ────────────────────────────────────
+    ・カード上部の背景色：.point__img--1 / --2 / --3 の background を変更
+    ・背景画像に変える場合：HTML の .point__img に
+      style="background-image:url('images/〇〇.jpg');" を追記
+    ・カード枚数を増やす場合：HTML の .point__list に <li class="point__item"> を追加
 ===========================================================*/
 .point {
     padding: 0 var(--inner-pad) 6%;
@@ -237,7 +256,9 @@ pc.css
     filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.12));
 }
 
-/* サムネイル */
+/* カード上部の画像エリア
+   ▼ 背景色を変えたい場合は linear-gradient の色を変更
+   ▼ 背景画像を使う場合は HTML に style="background-image:url('...');" を追記 */
 .point__img {
     height: 20vw;
     background-size: cover;
@@ -252,6 +273,7 @@ pc.css
     padding: 7% 6%;
     position: relative;
 }
+/* 番号（01 / 02 / 03） */
 .point__num {
     font-family: var(--font-display);
     font-style: italic;
@@ -277,6 +299,11 @@ pc.css
 
 /*===========================================================
     ④ lineup（ツアーラインナップ）
+    ────────────────────────────────────
+    ・背景色（カード上部）：.lineup__img--1 / --2 の background を変更
+    ・背景画像に変える場合：HTML の .lineup__img に
+      style="background-image:url('images/〇〇.jpg');" を追記
+    ・サムネイル画像（カードから飛び出す部分）：HTML の .lineup__thumb img を差し替え
 ===========================================================*/
 .lineup {
     background: var(--color-black);
@@ -292,7 +319,8 @@ pc.css
     padding: 0 2% 0 0;
 }
 
-/* サムネイル */
+/* カード上部の画像エリア
+   ▼ 背景色を変えたい場合は linear-gradient の色を変更 */
 .lineup__img {
     height: 18vw;
     background-size: cover;
@@ -312,6 +340,7 @@ pc.css
     flex-direction: row-reverse;
     padding: 0 0 0 4%;
 }
+/* サムネイル画像（カードから飛び出す小さい画像） */
 .lineup__thumb {
     width: 38%;
     flex-shrink: 0;
@@ -346,12 +375,18 @@ pc.css
 
 /*===========================================================
     ⑤ scene（活動シーン）
+    ────────────────────────────────────
+    ・スライド背景色：.scene__slide--〇〇 の background を変更
+    ・背景画像に変える場合：HTML の各 .scene__slide に
+      style="background-image:url('images/〇〇.jpg');" を追記
+    ・スライドの速度：@keyframes slideLeft アニメーション時間（60s）を変更
+    ・スライドのサイズ：.scene__slide の width / height を変更
 ===========================================================*/
 .scene {
     background: var(--color-beige);
 }
 
-/* スライダー */
+/* スライダーラッパー */
 .scene__slider-wrap {
     overflow: hidden;
     margin-bottom: 8px;
@@ -361,6 +396,7 @@ pc.css
     width: max-content;
     animation: slideLeft 60s linear infinite;
 }
+/* 自動スクロールアニメーション（左へ流れ続ける） */
 @keyframes slideLeft {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -374,7 +410,8 @@ pc.css
     margin-right: 4px;
 }
 
-/* スライド背景バリエーション */
+/* スライド背景色バリエーション
+   ▼ 背景画像に変える場合は HTML の各 .scene__slide に style を追記 */
 .scene__slide--forest   { background: linear-gradient(160deg, #4a9a5a 0%, #2d6a3a 50%, #0d2b0f 100%); }
 .scene__slide--mountain { background: linear-gradient(160deg, #5a8a9a 0%, #3a5a6a 50%, #1a2b3a 100%); }
 .scene__slide--river    { background: linear-gradient(160deg, #4a7a9a 0%, #2d5a7a 50%, #0d2b4a 100%); }
@@ -382,7 +419,7 @@ pc.css
 .scene__slide--sunrise  { background: linear-gradient(160deg, var(--color-sub) 0%, #9a5a0d 50%, #3a1a05 100%); }
 .scene__slide--lake     { background: linear-gradient(160deg, #4a7a8a 0%, #2d5a6a 50%, #0d1b2a 100%); }
 
-/* アクティビティリスト */
+/* アクティビティ一覧 */
 .scene__list {
     display: flex;
     flex-wrap: wrap;
@@ -394,6 +431,7 @@ pc.css
     border-right: 1px solid #c8bfa8;
     box-sizing: border-box;
 }
+/* アクティビティ名（英語）*/
 .scene__label {
     font-family: var(--font-display);
     font-style: italic;
@@ -420,6 +458,9 @@ pc.css
 
 /*===========================================================
     ⑥ about（NATURAについて）
+    ────────────────────────────────────
+    ・背景色：common.css の --color-main
+    ・テキストは HTML で直接変更してください
 ===========================================================*/
 .about {
     background: var(--color-main);
@@ -442,6 +483,10 @@ pc.css
 
 /*===========================================================
     ⑦ company（コンタクト・アクセス）
+    ────────────────────────────────────
+    ・背景色：common.css の --color-main
+    ・ロゴ・社名・住所・メール・SNS は HTML で変更してください
+    ・SNS アイコンの画像は HTML の .company__sns-item img を差し替え
 ===========================================================*/
 .company {
     background: var(--color-main);
@@ -471,6 +516,7 @@ pc.css
     display: table;
     margin: auto;
 }
+/* ロゴマーク画像エリア */
 .company__logo {
     width: 100px;
     float: left;
@@ -489,7 +535,7 @@ pc.css
     font-size: 1.4rem;
 }
 
-/* SNSリスト */
+/* SNS リスト */
 .company__sns {
     max-width: 700px;
     margin: 25px auto 35px auto;
@@ -509,6 +555,7 @@ pc.css
 .company__sns-item:hover {
     background: rgba(245, 240, 232, 0.08);
 }
+/* SNS アイコン画像サイズ */
 .company__sns-item img {
     max-width: 22px;
     width: 30%;
@@ -532,6 +579,7 @@ pc.css
     text-align: center;
     margin-bottom: 4px;
 }
+/* メールアドレス */
 .company__mail {
     font-family: var(--font-display);
     font-style: italic;

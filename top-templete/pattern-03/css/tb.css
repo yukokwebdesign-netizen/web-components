@@ -3,12 +3,22 @@
 Tablet Style
 tb.css
 -----------------------------------------------------------------------
-  対象：1024px以下 / 768px以下
+  ★ このファイルでできること
+  ────────────────────────────────────────
+  ・タブレット〜SP 表示のレイアウト崩れを修正する
+  ・PC より小さい画面サイズで文字・レイアウトを調整する
+
+  [ブレークポイント]
+  1024px以下：タブレット横向き〜小さめ PC
+  768px以下 ：タブレット縦向き〜大きめ SP（SP デザインに切り替わる）
+
+  ※ さらに小さい SP（767px以下）の調整は sp.css を確認してください
 ---------------------------------------------------------------------*/
 
 /* ===== 1024px以下 ===== */
 @media screen and (max-width: 1024px) {
 
+/* ヘッダーの高さ・ロゴサイズを縮小 */
 body {
     padding-top: 86px;
 }
@@ -18,22 +28,22 @@ body {
 .header__nav-list li { font-size: 1.15rem; }
 .header__contact { padding: 0 14px; margin-left: 10px; }
 
-/* hero */
+/* ① hero */
 .hero__title  { font-size: 7rem; }
 .hero__sub    { font-size: 2rem; }
 
-/* section-title */
+/* 共通見出し */
 .section-title h2 { font-size: 4.5rem; }
 
-/* point */
+/* ③ point */
 .point__head   { font-size: 3rem; }
 .point__img    { height: 25vw; }
 .intro__catch  { font-size: 2.5rem; }
 
-/* lineup */
+/* ④ lineup */
 .lineup__ttl  { font-size: 1.8rem; }
 
-/* scene */
+/* ⑤ scene スライドサイズ */
 .scene__slide { width: 320px; height: 220px; }
 
 } /* end 1024px */
@@ -44,27 +54,29 @@ body {
 
 body { padding-top: 66px; }
 
-/* PC/SP 出し分け */
+/* PC / SP 表示切り替え
+   ・.pc クラスの要素を非表示にする（ヘッダーナビ・ヒーロー右画像 等）
+   ・.sp クラスの要素を表示する（バーガートリガー 等） */
 .pc { display: none !important; }
 .sp { display: block !important; }
 
-/* header */
+/* ヘッダー */
 .header { padding: 18px 0; }
 .header.is-small { padding: 8px 0; }
 .header__logo { width: 110px; }
-.header__nav-list { display: none; }
-/* CONTACTボタンをハンバーガーの直左に配置 */
+.header__nav-list { display: none; } /* PC ナビを非表示 */
+/* CONTACT ボタンをバーガーアイコンの左に配置 */
 .header__contact { margin: 0 8px 0 0; padding: 0 14px; }
-/* バーガートリガーはflexで表示（spanが縦並びになるため） */
+/* バーガーアイコン（ハンバーガー）を表示 */
 .burger-trigger { display: flex !important; flex-direction: column; justify-content: space-between; }
 
-/* hero */
+/* ① hero：右側画像は PC のみ表示のため非表示 */
 .hero { min-height: auto; }
 .hero__title { font-size: 14vw; }
 .hero__sub   { font-size: 1.7rem; max-width: 100%; }
-.hero__img   { display: none; }
+/* .hero__img は .pc クラスで非表示になるため指定不要 */
 
-/* intro */
+/* ② intro：3カラムを縦並びに変更 */
 .intro { margin: -4% 0 6% 0; padding: 0; }
 .intro__boxes { flex-direction: column; }
 .intro__box   { width: 100%; }
@@ -73,7 +85,7 @@ body { padding-top: 66px; }
 .intro__catch    { font-size: 2.6rem; }
 .intro__catch-sub { font-size: 1.35rem; }
 
-/* point */
+/* ③ point：3カラムを縦並びに変更 */
 .point { padding: 0 0 10% 0; }
 .point__head { font-size: 2.6rem; }
 .point__list { flex-direction: column; gap: 0; }
@@ -81,20 +93,18 @@ body { padding-top: 66px; }
 .point__img  { height: 50vw; }
 .point__num  { font-size: 5rem; }
 
-/* lineup */
+/* ④ lineup：2カラムを縦並びに変更 */
 .lineup__row { display: block; }
 .lineup__col { width: 100%; padding: 0 5%; margin-bottom: 50px; }
-/* 右カラムも左カラムと同じ余白を適用 */
 .lineup__col:last-child { margin-bottom: 0; padding: 0 5%; }
 .lineup__img  { height: 40vw; }
 .lineup__body { flex-direction: column; }
 .lineup__body--right { flex-direction: column; }
-.lineup__thumb { display: none; }
+.lineup__thumb { display: none; } /* サムネイルは SP では非表示 */
 .lineup__text  { width: 100%; padding-top: 20px; }
 
-/* scene */
+/* ⑤ scene：アクティビティ一覧を縦並びに変更 */
 .scene__list { flex-direction: column; border-left: none; }
-/* scene__item を縦並びに */
 .scene__item {
     width: 100%;
     border-right: none;
@@ -105,14 +115,14 @@ body { padding-top: 66px; }
 .scene__name-wrap { width: 180px; flex-shrink: 0; }
 .scene__slide { width: 280px; height: 200px; }
 
-/* section-title */
+/* 共通見出し */
 .section-title h2 { font-size: 10vw; }
 
-/* company */
+/* ⑦ company */
 .company__sns    { margin: 20px auto; }
 .company__mail   { font-size: 2.2rem; }
 
-/* footer */
+/* フッター */
 .footer { padding: 14px 0; }
 .footer__logo { max-width: 100px; }
 .footer__copy { font-size: 1rem; }

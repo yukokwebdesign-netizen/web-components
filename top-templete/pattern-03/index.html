@@ -13,20 +13,28 @@
 
 <body>
 
-<!-- ========== HEADER ========== -->
+<!-- ========================================================================
+     HEADER（ヘッダー）
+     ・ロゴ画像：header__logo 内の <img> を差し替えてください
+     ・ナビゲーションのリンク先：href="#〇〇" の # 以降を変更してください
+     ・CONTACTボタン：href="#company" のリンク先を変更してください
+     ・スクロールで縮小する動作は JS（ページ末尾）で制御しています
+======================================================================== -->
 <header id="header" class="header tr">
   <div class="inner cl header__inner">
 
-    <!-- ロゴ -->
+    <!-- ロゴ
+         ▼ 画像に差し替え
+         <img src="images/logo.svg" alt="NATURA" style="height:30px;width:auto;">
+    -->
     <div class="header__logo flx tr">
       <a href="#">
-        <svg viewBox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:30px;width:auto;">
-          <text x="0" y="28" font-family="'Barlow Condensed',sans-serif" font-size="34" font-weight="600" font-style="italic" fill="#1a3a2a" letter-spacing="2">NATURA</text>
-        </svg>
+        <!-- 画像に差し替え -->
+        <img src="images/logo.png" alt="NATURA" style="height:30px;width:auto;">
       </a>
     </div>
 
-    <!-- ナビゲーション -->
+    <!-- ナビゲーション（PC表示） -->
     <nav class="header__nav">
       <ul class="header__nav-list pc">
         <li><a href="#lineup">ツアー</a></li>
@@ -40,7 +48,7 @@
         <a href="#company" class="ls015">CONTACT</a>
       </div>
 
-      <!-- バーガートリガー（SP） -->
+      <!-- バーガートリガー（SP のみ表示） -->
       <button class="burger-trigger sp" id="js-burger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
@@ -61,20 +69,27 @@
 </nav>
 
 
-<!-- ========== MAIN ========== -->
+<!-- ========================================================================
+     MAIN コンテンツ（#contents）
+     ・このブロック全体がページ読み込み時にフェードインします（animate.css）
+     ・各セクションは ① ～ ⑦ の番号で管理しています
+======================================================================== -->
 <article id="contents">
 
-  <!-- ① ヒーロー -->
+  <!-- ① ヒーロー（トップのメインビジュアル）
+       ・背景色：common.css の --grad-hero を変更してください
+       ・キャッチコピー・ボタンのテキストはここで直接編集できます
+  -->
   <section class="hero" id="hero">
     <div class="hero__bg"></div>
 
-    <!-- 山のシルエット SVG -->
-    <svg class="hero__bg-svg" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
-      <polygon points="0,500 280,180 420,280 560,120 700,240 860,80 1000,200 1160,100 1300,220 1440,140 1440,500" fill="#4a9a6a"/>
-      <polygon points="0,500 200,260 340,340 500,200 640,300 800,160 940,260 1100,170 1240,280 1440,200 1440,500" fill="#2d6a4f" opacity="0.7"/>
-      <circle cx="1200" cy="120" r="60" fill="#e9a94b" opacity="0.6"/>
-      <circle cx="1200" cy="120" r="80" fill="#e9a94b" opacity="0.15"/>
-    </svg>
+    <!-- ▼ ヒーロー右側の画像（PC のみ表示）
+         画像ファイルを用意して src を変更してください
+         pc.css の .hero__img でサイズ・位置を調整できます -->
+    <div class="hero__img pc">
+      <!-- 画像に差し替え -->
+      <img src="images/hero.jpg" alt="自然体験イメージ">
+    </div>
 
     <div class="hero__inner">
       <p class="hero__eyebrow italic ls02">ECO TOURISM · JAPAN</p>
@@ -89,26 +104,30 @@
   </section>
 
 
-  <!-- ② イントロボックス -->
+  <!-- ② イントロボックス（ブランド紹介・3カラム）
+       ・左：テキストとロゴ画像
+       ・中・右：背景画像＋キャッチコピー（背景は pc.css の .intro__img-box--1 / --2 で変更）
+       ・フェードインアニメーション：.anim-fade-up で制御（animate.css）
+  -->
   <section class="bg-beige">
     <div class="intro">
-      <div class="intro__boxes cl anim-fade-up is-visible">
+      <div class="intro__boxes cl anim-fade-up">
 
         <!-- テキストボックス -->
         <div class="intro__box intro__text-box">
           <div class="intro__logo-wrap">
             <div class="intro__logo-img">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="38" stroke="#4a7c59" stroke-width="1.5" fill="none"/>
-                <text x="40" y="50" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="20" font-weight="600" font-style="italic" fill="#f5f0e8">N</text>
-              </svg>
+              <!-- ▼ ロゴマーク画像に差し替え -->
+              <!-- 画像に差し替え -->
+              <img src="images/logo-mark.png" alt="NATURA ロゴマーク">
             </div>
             <p class="intro__logo-name">ナトゥーラ</p>
           </div>
           <p class="intro__desc">従来の観光旅行の枠を超え、人間と自然が本来持つつながりを取り戻す体験を提供します。プロのガイドと共に、普段では出会えない自然の姿に迫ります。</p>
         </div>
 
-        <!-- 画像背景ボックス 1 -->
+        <!-- 画像背景ボックス 1
+             背景画像を使う場合：style="background-image:url('images/intro1.jpg');" を追記 -->
         <div class="intro__box intro__img-box intro__img-box--1">
           <div class="w100">
             <h2 class="intro__catch font-display ls01">
@@ -132,21 +151,22 @@
     </div>
 
 
-    <!-- ③ 3つの体験価値 -->
+    <!-- ③ 3つの体験価値
+         ・各カードの背景色：pc.css の .point__img--1 / --2 / --3 を変更
+         ・背景画像を使う場合：style="background-image:url('images/point1.jpg');" を追記
+         ・テキストはここで直接編集できます
+    -->
     <div class="point inner">
-      <div class="anim-fade-up is-visible">
+      <div class="anim-fade-up">
         <h2 class="point__head fw6">心と身体を解放する、3つの体験価値</h2>
         <p class="point__lead f18">自然の中でしか得られない、深い気づきと回復をお届けします。</p>
 
         <ul class="point__list">
 
           <li class="point__item">
-            <div class="point__img point__img--1 cover">
-              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
-                <path d="M50,200 Q100,80 150,120 Q200,40 250,80 Q300,20 350,60 L400,200Z" fill="#2d6a4f"/>
-                <circle cx="320" cy="55" r="25" fill="#e9a94b" opacity="0.7"/>
-              </svg>
-            </div>
+            <!-- ▼ カード背景画像に差し替え（現在はグラデーション）
+                 style="background-image:url('images/point1.jpg');" を追記して画像に変更 -->
+            <div class="point__img point__img--1 cover"></div>
             <div class="point__body pos-re">
               <p class="point__num italic font-display pos-ab ls007">01</p>
               <h3 class="point__ttl fw6">森の癒し・フィトンチッド体験</h3>
@@ -155,12 +175,7 @@
           </li>
 
           <li class="point__item">
-            <div class="point__img point__img--2 cover">
-              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
-                <polygon points="50,200 200,30 350,200" fill="#1a4a2a"/>
-                <polygon points="100,200 200,70 300,200" fill="#2d6a4f" opacity="0.8"/>
-              </svg>
-            </div>
+            <div class="point__img point__img--2 cover"></div>
             <div class="point__body pos-re">
               <p class="point__num italic font-display pos-ab ls007">02</p>
               <h3 class="point__ttl fw6">登山・トレッキングガイドツアー</h3>
@@ -169,11 +184,7 @@
           </li>
 
           <li class="point__item">
-            <div class="point__img point__img--3 cover">
-              <svg viewBox="0 0 400 200" style="width:100%;height:100%;opacity:0.5;">
-                <path d="M0,140 Q80,100 160,130 Q240,80 320,110 Q370,90 400,120 L400,200 L0,200Z" fill="#1a5a3a"/>
-              </svg>
-            </div>
+            <div class="point__img point__img--3 cover"></div>
             <div class="point__body pos-re">
               <p class="point__num italic font-display pos-ab ls007">03</p>
               <h3 class="point__ttl fw6">野生動物・野鳥観察プログラム</h3>
@@ -187,7 +198,12 @@
   </section>
 
 
-  <!-- ④ ツアーラインナップ -->
+  <!-- ④ ツアーラインナップ
+       ・背景色：pc.css の .lineup__img--1 / --2（カード上部の画像エリア）
+       ・背景画像に変える場合：style="background-image:url('images/lineup1.jpg');" を追記
+       ・サムネイル画像（斜めにはみ出す部分）：.lineup__thumb 内の <img> を差し替え
+       ・テキスト・料金などはここで直接編集できます
+  -->
   <section class="lineup section-pad cl" id="lineup">
     <div class="inner">
       <hgroup class="section-title section-title--light">
@@ -196,22 +212,18 @@
       </hgroup>
     </div>
 
-    <div class="lineup__row cl anim-fade-left is-visible">
+    <div class="lineup__row cl anim-fade-left">
 
       <!-- 左カラム -->
       <div class="lineup__col">
-        <div class="lineup__img lineup__img--1 cover">
-          <svg viewBox="0 0 600 200" style="width:100%;height:100%;opacity:0.6;">
-            <circle cx="480" cy="50" r="35" fill="#e9a94b" opacity="0.5"/>
-          </svg>
-        </div>
+        <!-- ▼ カード上部の画像エリア（現在はグラデーション） -->
+        <div class="lineup__img lineup__img--1 cover"></div>
         <div class="lineup__body cl">
+          <!-- ▼ サムネイル画像（カードから飛び出す小さい画像）
+               画像に差し替え：<img src="images/lineup-thumb1.jpg" alt="森のツアー"> -->
           <div class="lineup__thumb">
-            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="160" rx="4" fill="#1a3a2a"/>
-              <path d="M20,160 Q40,80 60,100 Q80,50 100,70 L120,160Z" fill="#4a9a6a" opacity="0.8"/>
-              <text x="60" y="40" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="14" font-weight="600" fill="#f5f0e8" font-style="italic">FOREST</text>
-            </svg>
+            <!-- 画像に差し替え -->
+            <img src="images/image_1.jpg" alt="森のツアー">
           </div>
           <div class="lineup__text">
             <p class="lineup__label fw3 italic text-sub ls01">FOREST TOUR</p>
@@ -223,23 +235,17 @@
 
       <!-- 右カラム -->
       <div class="lineup__col">
-        <div class="lineup__img lineup__img--2 cover">
-          <svg viewBox="0 0 600 200" style="width:100%;height:100%;opacity:0.6;">
-            <polygon points="300,20 380,140 220,140" fill="#5a9a6a" opacity="0.5"/>
-          </svg>
-        </div>
+        <div class="lineup__img lineup__img--2 cover"></div>
         <div class="lineup__body lineup__body--right cl">
           <div class="lineup__text">
             <p class="lineup__label fw3 italic text-sub ls01">MOUNTAIN TOUR</p>
             <h3 class="lineup__ttl fw6">山頂から望む——<br>大地と空の境界線</h3>
             <p class="lineup__txt">雲の上に広がる360度の絶景と、稜線を渡る風の感触。体力・経験に合わせたルートを選び、山を「征服」するのではなく、山と「対話」する登山文化を体験いただけます。</p>
           </div>
+          <!-- ▼ サムネイル画像（右カラム） -->
           <div class="lineup__thumb">
-            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="160" rx="4" fill="#1a3a2a"/>
-              <polygon points="60,20 100,140 20,140" fill="#4a9a6a" opacity="0.8"/>
-              <text x="60" y="158" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="12" font-weight="600" fill="#f5f0e8" font-style="italic">MOUNTAIN</text>
-            </svg>
+            <!-- 画像に差し替え -->
+            <img src="images/image_1.jpg" alt="登山ツアー">
           </div>
         </div>
       </div>
@@ -248,7 +254,12 @@
   </section>
 
 
-  <!-- ⑤ 活動シーン -->
+  <!-- ⑤ 活動シーン
+       ・スライダー：自動で左スクロールするアニメーション（animate.css の slideLeft）
+       ・スライド背景色：pc.css の .scene__slide--〇〇 で変更
+       ・背景画像に変える場合：各 .scene__slide に style="background-image:url('images/〇〇.jpg');" を追記
+       ・アクティビティ一覧テキストはここで直接編集できます
+  -->
   <section class="scene section-pad cl" id="scene">
     <div class="inner">
       <hgroup class="section-title section-title--dark">
@@ -256,16 +267,17 @@
         <p>活動シーン</p>
       </hgroup>
 
-      <!-- スライダー（PC） -->
+      <!-- 自動スクロールスライダー（PC のみ表示） -->
       <div class="scene__slider-wrap pc">
         <div class="scene__slides">
+          <!-- ▼ 各スライドに style="background-image:url('images/scene-〇〇.jpg');" で画像差し替え可能 -->
           <div class="scene__slide scene__slide--forest cover"></div>
           <div class="scene__slide scene__slide--mountain cover"></div>
           <div class="scene__slide scene__slide--river cover"></div>
           <div class="scene__slide scene__slide--wildlife cover"></div>
           <div class="scene__slide scene__slide--sunrise cover"></div>
           <div class="scene__slide scene__slide--lake cover"></div>
-          <!-- 無限ループ用クローン -->
+          <!-- 無限ループ用クローン（上の6枚と同じ画像が必要） -->
           <div class="scene__slide scene__slide--forest cover"></div>
           <div class="scene__slide scene__slide--mountain cover"></div>
           <div class="scene__slide scene__slide--river cover"></div>
@@ -275,8 +287,8 @@
         </div>
       </div>
 
-      <!-- アクティビティリスト -->
-      <ul class="scene__list cl anim-fade-up is-visible">
+      <!-- アクティビティ一覧 -->
+      <ul class="scene__list cl anim-fade-up">
         <li class="scene__item">
           <p class="scene__label">TREKKING</p>
           <h3 class="scene__name fw5">トレッキング</h3>
@@ -307,9 +319,12 @@
   </section>
 
 
-  <!-- ⑥ NATURAについて -->
+  <!-- ⑥ NATURAについて
+       ・背景色：common.css の --color-main
+       ・テキストはここで直接編集できます
+  -->
   <section class="about section-pad text-cream" id="about">
-    <div class="inner anim-fade-up is-visible">
+    <div class="inner anim-fade-up">
       <hgroup class="section-title section-title--light">
         <h2>ABOUT</h2>
         <p>私たちについて</p>
@@ -328,7 +343,13 @@
   </section>
 
 
-  <!-- ⑦ コンタクト・アクセス -->
+  <!-- ⑦ コンタクト・アクセス
+       ・住所・電話番号：.company__info 内の <p> を変更してください
+       ・メールアドレス：.company__mail 内の href と表示テキストを変更してください
+       ・SNSリンク：各 .company__sns-item の href="#" を実際の URL に変更してください
+       ・SNSアイコン：各 <img> の src を実際のアイコン画像に差し替えてください
+       ・ロゴマーク：.company__logo 内の <img> を差し替えてください
+  -->
   <section class="company section-pad" id="company">
     <div class="inner">
 
@@ -337,40 +358,49 @@
       </h2>
 
       <div class="company__profile cl">
+        <!-- ▼ ロゴマーク画像に差し替え -->
         <div class="company__logo flx" style="height:70px;">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="38" stroke="#4a7c59" stroke-width="1.5" fill="none"/>
-            <text x="40" y="50" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="600" font-style="italic" fill="#f5f0e8">N</text>
-          </svg>
+          <!-- 画像に差し替え -->
+          <img src="images/logo-mark.png" alt="NATURA ロゴマーク">
         </div>
         <div class="company__info flx" style="height:70px;">
           <div class="w100">
             <h3 class="company__name fw6">NATURA エコツーリズム</h3>
-            <p class="f15">〒500-8833 岐阜県瑞穂市大宮町1-1　Tel: 058-XXX-XXXX</p>
+            <!-- ▼ 住所・電話番号を変更してください -->
+            <p class="f15">〒500-8833 〇〇県〇〇市〇〇町1-1　Tel: XXX-XXX-XXXX</p>
           </div>
         </div>
       </div>
 
-      <!-- SNS -->
+      <!-- SNS リンク
+           ▼ 各 href="#" を実際の SNS URL に変更してください
+           ▼ 各 <img> の src を SNS アイコン画像に差し替えてください
+           （例：src="images/icon-instagram.svg"）-->
       <ul class="company__sns cl">
         <li class="company__sns-item tr"><a href="#" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="rgba(245,240,232,0.6)"/></svg>
+          <!-- 画像に差し替え（Instagram） -->
+          <img src="images/icon-instagram.svg" alt="Instagram">
         </a></li>
         <li class="company__sns-item tr"><a href="#" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><path d="M18 2H15C13.3 2 12 3.3 12 5V8H9V12H12V22H16V12H19L20 8H16V5C16 4.4 16.4 4 17 4H20V2H18Z"/></svg>
+          <!-- 画像に差し替え（Facebook） -->
+          <img src="images/icon-facebook.svg" alt="Facebook">
         </a></li>
         <li class="company__sns-item tr"><a href="#" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          <!-- 画像に差し替え（X / Twitter） -->
+          <img src="images/icon-x.svg" alt="X（旧Twitter）">
         </a></li>
         <li class="company__sns-item tr"><a href="#" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.6)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <!-- 画像に差し替え（Web / その他） -->
+          <img src="images/icon-web.svg" alt="Web">
         </a></li>
       </ul>
 
+      <!-- ▼ 問い合わせ促進テキストを変更してください -->
       <p class="company__notice fw6">ご予約・ご質問など、お気軽にお問い合わせください</p>
 
       <ul class="company__contact cl">
         <li class="company__contact-item">
+          <!-- ▼ メールアドレスを変更してください -->
           <p class="company__mail fw5 italic ls007">
             <a href="mailto:info@natura-eco.jp">info@natura-eco.jp</a>
           </p>
@@ -383,13 +413,18 @@
 </article>
 
 
-<!-- ========== FOOTER ========== -->
+<!-- ========================================================================
+     FOOTER（フッター）
+     ・ロゴ画像：.footer__logo 内の <img> を差し替えてください
+     ・コピーライトテキスト：.footer__copy を変更してください
+     ・背景色：common.css の .footer { background } を変更してください
+======================================================================== -->
 <footer id="footer" class="footer">
   <div class="inner cl footer__inner">
     <p class="footer__logo flx" style="height:28px;">
-      <svg viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:22px;width:auto;">
-        <text x="0" y="22" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="600" font-style="italic" fill="rgba(245,240,232,0.5)" letter-spacing="2">NATURA</text>
-      </svg>
+      <!-- ▼ フッターロゴ画像に差し替え -->
+      <!-- 画像に差し替え -->
+      <img src="images/logo-white.png" alt="NATURA" style="height:22px;width:auto;">
     </p>
     <p class="footer__copy ls007" style="height:28px;">© NATURA ECO TOURISM</p>
   </div>
@@ -397,13 +432,19 @@
 
 
 <script>
-/* === ヘッダー スクロール縮小 === */
+/* ===================================================================
+   JavaScript（動作の制御）
+   ・ここは基本的に触る必要はありません
+   ・バーガーメニューのリンク先を変更したい場合は HTML の nav を変更してください
+=================================================================== */
+
+/* ヘッダー：スクロール80px以上でヘッダーが縮小する（.is-small クラスを付与） */
 window.addEventListener('scroll', function () {
   var hdr = document.getElementById('header');
   hdr.classList.toggle('is-small', window.scrollY > 80);
 });
 
-/* === スムーススクロール === */
+/* スムーススクロール：ページ内リンク（href="#〇〇"）をなめらかにスクロール */
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {
     var target = document.querySelector(this.getAttribute('href'));
@@ -413,7 +454,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   });
 });
 
-/* === スクロールフェードイン（IntersectionObserver） === */
+/* スクロールフェードイン：画面内に入った要素に .is-visible を付与してアニメーション発火 */
 var observer = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -425,7 +466,7 @@ document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right').fo
   observer.observe(el);
 });
 
-/* === バーガーメニュー === */
+/* バーガーメニュー：SP でハンバーガーアイコンをタップするとメニューが開閉 */
 var burgerBtn  = document.getElementById('js-burger');
 var burgerMenu = document.getElementById('js-burger-menu');
 var burgerClose = document.getElementById('js-burger-close');

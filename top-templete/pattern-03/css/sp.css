@@ -3,52 +3,57 @@
 Smart Phone Style
 sp.css
 -----------------------------------------------------------------------
-  対象：767px以下
+  ★ このファイルでできること
+  ────────────────────────────────────────
+  ・767px以下（スマートフォン）での文字サイズ・余白を細かく調整する
+  ・tb.css（768px以下）より優先度が高く、さらに細かい上書きができる
+
+  ※ レイアウトの大きな変更（縦並びへの変換など）は tb.css で行っています
 ---------------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
 
-/* inner */
+/* 内側余白を少し狭める */
 .inner { padding: 0 4%; }
 
-/* section-title */
+/* 共通見出し */
 .section-title    { margin-bottom: 8%; }
 .section-title h2 { font-size: 11vw; }
 .section-title p  { font-size: 1.2rem; }
 
-/* hero */
+/* ① hero */
 .hero__inner    { padding: 12% 4% 10% 4%; }
 .hero__eyebrow  { font-size: 1.2rem; }
 .hero__title    { font-size: 13vw; line-height: 0.88em; }
 .hero__sub      { font-size: 1.5rem; margin: 14px 0 30px 0; }
 
-/* btn */
+/* ボタン */
 .btn { padding: 13px 28px; font-size: 1.4rem; }
 
-/* intro */
+/* ② intro */
 .intro__logo-img   { width: 35%; }
 .intro__logo-name  { font-size: 1.6rem; }
 .intro__desc       { font-size: 1.2rem; }
 .intro__catch      { font-size: 5.5vw; }
 .intro__catch-sub  { font-size: 1.3rem; }
 
-/* point */
+/* ③ point */
 .point__ttl { font-size: 1.8rem; padding-top: 22px; }
 .point__txt { font-size: 1.25rem; }
 .point__num { font-size: 4.5rem; }
 .point__body { padding: 8% 6% 6% 6%; }
 
-/* lineup */
+/* ④ lineup */
 .lineup__ttl   { font-size: 1.6rem; }
 .lineup__label { font-size: 1.7rem; }
 .lineup__txt   { font-size: 1.2rem; }
 
-/* scene */
+/* ⑤ scene スライドサイズ */
 .scene__slide { width: 240px; height: 170px; }
 
-/* about */
+/* ⑥ about */
 .about { padding: 8% 0; }
 
-/* company */
+/* ⑦ company */
 .company__ttl       { font-size: 2.3rem; }
 .company__logo      { float: none; width: 80px; margin: 0 auto 12px auto; }
 .company__info      { margin: 0 auto; text-align: center; }

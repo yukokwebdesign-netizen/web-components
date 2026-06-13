@@ -3,25 +3,34 @@
 Animate Style
 animate.css
 -----------------------------------------------------------------------
-  スクロール連動のフェードインアニメーション。
-  JSで .is-visible を付与することで発火する設計。
+  ★ このファイルでできること
+  ────────────────────────────────────────
+  ・スクロールに連動したフェードインアニメーションを管理する
+  ・アニメーションの速度・動き幅を変更する
 
-  使い方:
-    HTML: <div class="anim-fade-up">...</div>
-    JS:   el.classList.add('is-visible')  ← IntersectionObserver 推奨
+  [仕組み]
+  1. HTML に .anim-fade-up などのクラスを付ける（初期状態：非表示）
+  2. JS（index.html 末尾）の IntersectionObserver が画面内に入ったことを検知
+  3. .is-visible クラスが付与され → アニメーション発火（表示される）
+
+  [使い方]
+  HTML: <div class="anim-fade-up">...</div>
+  ※ JS が自動で .is-visible を付けます。手動では付けないでください。
 ---------------------------------------------------------------------*/
 
-/* --- ページロード時フェード（#contents 全体） --- */
+/* --- ページ読み込み時フェード（#contents 全体） --- */
 #contents {
     animation: fadeIn 1.5s ease 0s 1 normal;
 }
 
-/* --- 各アニメーションクラス（初期状態） --- */
+/* --- 各アニメーションクラス（初期状態：非表示） ---
+   ▼ 動きの量を変えたい場合は translate の値を変更
+   ▼ 速度を変えたい場合は transition の秒数を変更 */
 .anim-fade-up   { opacity: 0; transform: translate(0, 40px);  transition: all 1.5s; }
 .anim-fade-left { opacity: 0; transform: translate(-50px, 0); transition: all 1s; }
 .anim-fade-right{ opacity: 0; transform: translate(50px, 0);  transition: all 1.5s; }
 
-/* --- 発火後（JS で .is-visible を付与） --- */
+/* --- JS で .is-visible が付与されたとき（表示状態） --- */
 .anim-fade-up.is-visible,
 .anim-fade-left.is-visible,
 .anim-fade-right.is-visible {
