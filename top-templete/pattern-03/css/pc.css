@@ -99,7 +99,7 @@ pc.css
     font-style: italic;
     line-height: 0.9em;
     letter-spacing: 0.05em;
-    color: var(--color-beige);
+    color: var(--color-base);
     margin-bottom: 0;
 }
 .hero__sub {
@@ -169,7 +169,7 @@ pc.css
 }
 .intro__logo-name {
     font-size: 1.8rem;
-    color: var(--color-beige);
+    color: var(--color-base);
     letter-spacing: 0.1em;
     font-weight: 500;
 }
@@ -203,7 +203,7 @@ pc.css
     font-family: var(--font-display);
     font-size: 3rem;
     font-weight: 600;
-    color: var(--color-beige);
+    color: var(--color-base);
     line-height: 1.1em;
     margin-bottom: 12px;
 }
@@ -363,7 +363,7 @@ pc.css
 }
 .lineup__ttl {
     font-weight: 600;
-    color: var(--color-beige);
+    color: var(--color-base);
     line-height: 1.3em;
     margin-bottom: 12px;
 }
@@ -383,7 +383,7 @@ pc.css
     ・スライドのサイズ：.scene__slide の width / height を変更
 ===========================================================*/
 .scene {
-    background: var(--color-beige);
+    background: var(--color-base);
 }
 
 /* スライダーラッパー */
@@ -500,7 +500,7 @@ pc.css
     margin: 0 auto 40px auto;
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(245, 240, 232, 0.3);
-    color: var(--color-beige);
+    color: var(--color-base);
     line-height: 1em;
 }
 .company__ttl span {
@@ -526,7 +526,7 @@ pc.css
 }
 .company__name {
     font-weight: 600;
-    color: var(--color-beige);
+    color: var(--color-base);
     padding-bottom: 5px;
     line-height: 1em;
 }
@@ -585,5 +585,5 @@ pc.css
     font-style: italic;
     font-weight: 500;
     letter-spacing: 0.07em;
-    color: var(--color-beige);
+    color: var(--color-base);
 }

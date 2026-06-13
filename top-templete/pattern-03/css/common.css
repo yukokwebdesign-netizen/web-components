@@ -35,7 +35,7 @@ common.css
     --color-sub:    #c8881e;
 
     /* --- ベージュ：サイト全体の背景色 --- */
-    --color-beige:  #f5f0e8;
+    --color-base:  #f5f0e8;
 
     --color-white:  #ffffff;
 
@@ -44,12 +44,12 @@ common.css
 
     --color-grey:   #888888;
 
-    /* --- 透過バリエーション（--color-main / --color-beige から派生） --- */
+    /* --- 透過バリエーション（--color-main / --color-base から派生） --- */
     --color-main-15:  rgba(26, 58, 42, 0.15);
     --color-main-8:   rgba(26, 58, 42, 0.08);
     --color-main-12:  rgba(26, 58, 42, 0.12);
-    --color-beige-97: rgba(245, 240, 232, 0.97);
-    --color-beige-45: rgba(245, 240, 232, 0.45);
+    --color-base-97: rgba(245, 240, 232, 0.97);
+    --color-base-45: rgba(245, 240, 232, 0.45);
 
     /* --- グラデーション --- */
     --grad-main:    linear-gradient(45deg, #2d6a4f, var(--color-main));
@@ -81,7 +81,7 @@ common.css
 body {
     font-family: var(--font-base);
     color: var(--color-black);
-    background: var(--color-beige);
+    background: var(--color-base);
     line-height: 1.8em;
     padding-top: 110px; /* ← ヘッダーの高さに合わせて調整 */
 }
@@ -118,7 +118,7 @@ body {
 
 /* --- テキストカラー --- */
 .text-white { color: var(--color-white); }
-.text-beige { color: var(--color-beige); }
+.text-beige { color: var(--color-base); }
 .text-main  { color: var(--color-main); }
 .text-sub   { color: var(--color-sub); }
 .text-grey  { color: var(--color-grey); }
@@ -126,7 +126,7 @@ body {
 /* --- 背景カラー --- */
 .bg-main    { background: var(--color-main); }
 .bg-sub     { background: var(--color-sub); }
-.bg-beige   { background: var(--color-beige); }
+.bg-beige   { background: var(--color-base); }
 .bg-black   { background: var(--color-black); }
 .bg-grad-main { background: var(--grad-main); }
 .bg-grad-sub  { background: var(--grad-sub); }
@@ -205,7 +205,7 @@ body {
 
 /* 色バリエーション */
 .section-title--dark  { color: var(--color-black); }
-.section-title--light { color: var(--color-beige); }
+.section-title--light { color: var(--color-base); }
 
 /* ----- btn（ボタン共通）-----
    使い方:
@@ -243,7 +243,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 9999;
-    background: var(--color-beige-97);
+    background: var(--color-base-97);
     border-bottom: 1px solid transparent;
     transition: var(--transition);
 }
@@ -361,7 +361,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: 9998;
-    background: var(--color-beige-97);
+    background: var(--color-base-97);
     padding: 80px 0 30px;
     text-align: center;
 }
@@ -404,7 +404,7 @@ body {
 }
 .footer__copy {
     font-size: 1.2rem;
-    color: var(--color-beige-45);
+    color: var(--color-base-45);
     letter-spacing: 0.07em;
     line-height: 28px;
     margin-left: auto;
