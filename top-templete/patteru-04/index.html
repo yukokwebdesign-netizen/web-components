@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイトタイトル</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pc.css">
+    <link rel="stylesheet" href="tb.css">
+    <link rel="stylesheet" href="sp.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="header-inner">
+            <a href="/" class="header-logo">LOGO</a>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn header-cta">お問い合わせ</a>
+            <!-- JS: クリックで .is-active を toggle -->
+            <button class="hb-btn" type="button" aria-label="メニューを開く" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- JS: クリックで .is-open を toggle -->
+    <nav class="sp-nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn">お問い合わせ</a>
+    </nav>
+
+    <main>
+
+        <!-- ========== HERO ========== -->
+        <section id="first" class="section-hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="hero-label">キャッチフレーズ</p>
+                    <h1 class="hero-title">メインタイトルが<br>入る</h1>
+                    <p class="hero-desc">サービスの説明文。ここには魅力や特徴をわかりやすく記載。読み手に伝わりやすい言葉を選ぶ。</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">お問い合わせ</a>
+                        <a href="#service" class="btn btn-outline">サービスを見る</a>
+                    </div>
+                </div>
+                <div class="hero-img img-placeholder"></div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT ========== -->
+        <section id="about" class="section-about">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">ABOUT</p>
+                    <h2 class="section-title">私たちについて</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-img img-placeholder"></div>
+                    <div class="about-text">
+                        <h3>見出し</h3>
+                        <p>本文テキストが入る。ここにはサービスや会社の説明を記載する。</p>
+                        <p>2段落目のテキストが入る。詳細な情報や特徴をさらに伝える。</p>
+                        <a href="#service" class="btn">詳しく見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SERVICE ========== -->
+        <section id="service" class="section-service">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">SERVICE</p>
+                    <h2 class="section-title">サービス</h2>
+                    <p class="section-desc">サービスの概要説明文が入る。</p>
+                </div>
+                <ul class="card-grid">
+                    <li class="card">
+                        <div class="card-img img-placeholder"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">サービス 01</h3>
+                            <p class="card-text">サービスの説明文が入る。特徴や強みをわかりやすく記載。</p>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="card-img img-placeholder"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">サービス 02</h3>
+                            <p class="card-text">サービスの説明文が入る。特徴や強みをわかりやすく記載。</p>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="card-img img-placeholder"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">サービス 03</h3>
+                            <p class="card-text">サービスの説明文が入る。特徴や強みをわかりやすく記載。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== WORKS ========== -->
+        <section id="works" class="section-works">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">WORKS</p>
+                    <h2 class="section-title">実績・事例</h2>
+                </div>
+                <ul class="works-grid">
+                    <li class="works-item img-placeholder"></li>
+                    <li class="works-item img-placeholder"></li>
+                    <li class="works-item img-placeholder"></li>
+                    <li class="works-item img-placeholder"></li>
+                    <li class="works-item img-placeholder"></li>
+                    <li class="works-item img-placeholder"></li>
+                </ul>
+                <div class="section-more">
+                    <a href="#" class="btn btn-outline">もっと見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ ========== -->
+        <section id="faq" class="section-faq">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">FAQ</p>
+                    <h2 class="section-title">よくある質問</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-q">よくある質問がここに入る</summary>
+                        <div class="faq-a">回答文が入る。必要であれば複数行にわたって記載。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">よくある質問がここに入る</summary>
+                        <div class="faq-a">回答文が入る。必要であれば複数行にわたって記載。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">よくある質問がここに入る</summary>
+                        <div class="faq-a">回答文が入る。必要であれば複数行にわたって記載。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">よくある質問がここに入る</summary>
+                        <div class="faq-a">回答文が入る。必要であれば複数行にわたって記載。</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section id="contact" class="section-contact">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">CONTACT</p>
+                    <h2 class="section-title">お問い合わせ</h2>
+                    <p class="section-desc">お気軽にお問い合わせください。</p>
+                </div>
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-row">
+                        <label for="name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">メールアドレス <span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="tel">電話番号</label>
+                        <input type="tel" id="tel" name="tel" placeholder="000-0000-0000">
+                    </div>
+                    <div class="form-row">
+                        <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                        <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-inner container">
+            <div class="footer-top">
+                <a href="/" class="footer-logo">LOGO</a>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">© 2026 サイト名. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

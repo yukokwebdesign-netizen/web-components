@@ -1,0 +1,83 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Tablet Style (〜959px)
+tb.css
+-----------------------------------------------------------------------
+Copyright 2026 (c)
+---------------------------------------------------------------------*/
+@media screen and (max-width: 959px) {
+/*===========================================================
+    header
+===========================================================*/
+.header-nav,
+.header-cta {
+    display: none;
+}
+.hb-btn {
+    display: flex;
+    margin-left: auto;
+}
+.sp-nav {
+    display: flex;
+}
+
+/*===========================================================
+    hero
+===========================================================*/
+.hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+.hero-btns {
+    justify-content: center;
+}
+.hero-img {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*===========================================================
+    about
+===========================================================*/
+.about-grid {
+    grid-template-columns: 1fr;
+}
+.about-img {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+.about-text {
+    align-items: center;
+    text-align: center;
+}
+
+/*===========================================================
+    service
+===========================================================*/
+.card-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/*===========================================================
+    works
+===========================================================*/
+.works-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/*===========================================================
+    footer
+===========================================================*/
+.footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+}
+.footer-nav ul {
+    justify-content: flex-start;
+    gap: 1.5em;
+}
+
+}

@@ -1,0 +1,255 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------
+Common Style
+common.css
+-----------------------------------------------------------------------
+Copyright 2026 (c) 
+---------------------------------------------------------------------*/
+@media screen and (max-width: 959px) {}
+@media screen and (max-width: 482px) {}
+/*===========================================================
+    root
+===========================================================*/
+:root {
+    /* カラー設定 */
+    --color-main: rgb(44, 37, 41);
+    --color-base: rgb(255, 255, 255);
+    --color-accent: rgb(54, 78, 165);
+    --color-point: rgb(15, 47, 116);
+
+    --color-normal: rgb(112, 98, 107);
+
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(15, 13, 14);
+
+    /* 透明カラー設定 */
+    --color-main__transparent: rgba(242, 175, 214, 0.5);
+    --color-base__transparent: rgba(255, 255, 255, 0.5);
+    --color-accent__transparent: rgba(255, 146, 185, 0.3);
+    --color-point__transparent: rgba(239, 120, 194, 0.5);
+
+    /* グラデーションカラー設定 */
+    --color-grad__purple: rgb(238, 134, 168), rgb(192, 188, 221);
+
+    /* レイアウト管理 */
+    --header-h: 5em;       /* ヘッダーの高さ。heroのpadding-topやsp-navのtopに使用 */
+    --section-py: 5em;     /* 全セクション共通の上下padding */
+    --section-gap: 3.5em;  /* section-headとコンテンツ間・グリッドのgapなど */
+    --card-gap: 1.5em;     /* card-grid・works-gridのgap */
+    --container-max: 1200px; /* .containerの最大幅 */
+    --container-w: 90%;      /* .containerの幅（左右の余白） */
+    --border-radius: 0.75em; /* カードやFAQの角丸 */
+    --color-placeholder: rgba(0, 0, 0, 0.08); /* 画像プレースホルダーの色 */
+
+}
+
+
+/*===========================================================
+    common
+===========================================================*/
+html ,body ,.wrap {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    width: 100dvw;
+}
+html ,body {
+    scroll-behavior: smooth;
+}
+
+/*===========================================================
+    body
+===========================================================*/
+body {
+    font-family: "gotti-variable", "Zen Maru Gothic";
+    font-style: normal;
+    font-variation-settings: "wght" 400;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    background: var(--color-base);
+}
+body, a {
+    color: var(--color-normal);
+}
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+/*===========================================================
+    font
+===========================================================*/
+.maru {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-style: normal;
+}
+.mega {
+    font-family: "vdl-megamarupop-futoline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.mega-shadow {
+    font-family: "vdl-megamarupop-shadow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.gotti {
+    font-family: "gotti-variable", sans-serif;
+    font-variation-settings: "wght" 400;
+}
+.bimbo {
+    font-family: "bimbo-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*===========================================================
+    base
+===========================================================*/
+/* width */
+.container {
+    max-width: var(--container-max);
+    width: var(--container-w);
+    margin: 0 auto;
+}
+.width-1350 {
+    max-width: 1350px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*background*/
+.back-main { background: var(--color-main);}
+.back-base { background: var(--color-base);}
+.back-accent { background: var(--color-accent);}
+.back-point { background: var(--color-point);}
+.back-main__transparent { background: var(--color-main__transparent);}
+.back-base__transparent { background: var(--color-base__transparent);}
+.back-accent__transparent { background: var(--color-accent__transparent);}
+.back-point__transparent { background: var(--color-point__transparent);}
+
+/* 左から右へ */
+.back-grad__lr__purple {
+    background: linear-gradient(90deg, var(--color-grad__purple));
+}
+/* back-check */
+.back-check {
+    background-color: #ffffff;
+    background-image: linear-gradient(90deg, #ef78c21a 2px, transparent 2px), linear-gradient(#ef78c21a 2px, transparent 2px);
+    background-position: 10px 10px;
+    background-size: 42px 42px;
+}
+
+/* back-stripe */
+.back-stripe {
+    background-image: repeating-linear-gradient(90deg, #fdf1f8, #fdf1f8 30px, #fce8f4 30px, #fce8f4 60px);
+}
+
+
+/* border */
+.border-main { border: solid 2px var(--color-main);}
+.border-base { border: solid 2px var(--color-base);}
+.border-accent { border: solid 2px var(--color-accent);}
+.border-point { border: solid 2px var(--color-point);}
+
+
+/*color*/
+.text-main { color: var(--color-main);}
+.text-base { color: var(--color-base);}
+.text-accent { color: var(--color-accent);}
+.text-point { color: var(--color-point);}
+.text-normal { color: var(--color-normal);}
+
+.text-grad__purple {
+    background: linear-gradient(180deg, var(--color-grad__purple));
+	-webkit-background-clip:text;
+	-webkit-text-fill-color: transparent;
+    text-box: unset;
+}
+
+
+/* font weight */
+.weight-300 { font-weight: 300;}
+.weight-400 { font-weight: 400;}
+.weight-500 { font-weight: 500;}
+.weight-600 { font-weight: 600;}
+.weight-700 { font-weight: 700;}
+.weight-800 { font-weight: 800;}
+.weight-900 { font-weight: 900;}
+
+/*svg fill*/
+svg path.main, svg polygon.main, svg circle.main { fill: var(--color-main);}
+svg path.base, svg polygon.base, svg circle.base { fill: var(--color-base);}
+svg path.accent, svg polygon.accent, svg circle.accent { fill: var(--color-accent);}
+svg path.point, svg polygon.point, svg circle.point { fill: var(--color-point);}
+
+/* shadow */
+.shadow-main { box-shadow: 2px 2px 0 var(--color-main);}
+.shadow-base { box-shadow: 2px 2px 0 var(--color-base);}
+.shadow-accent { box-shadow: 2px 2px 0 var(--color-accent);}
+.shadow-point { box-shadow: 2px 2px 0 var(--color-point);}
+
+/* shadow border */
+.shadow-border {
+    position: relative;
+    padding-bottom: 1em;
+}
+.shadow-border::before {
+    content: "";
+    width: 100%;
+    height: 1em;
+    background-image: repeating-linear-gradient(125deg, #edcce5, #edcce5 2px, transparent 2px, transparent 7px);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* wave-parts */
+article:has(.wave-parts),
+main:has(.wave-parts) {
+    position: relative;
+    z-index: 2;
+}
+.wave-parts {
+    width: 100%;
+    height: 15px;
+    position: absolute;
+}
+.wave-parts.pc {
+    display: none;
+}
+.wave-parts path {
+    width: 100%;
+}
+.wave-border__top {
+    filter: drop-shadow(0 -3px 0 var(--color-main));
+    left: 0;
+    top: -14px;
+}
+.wave-border__bottom {
+    filter: drop-shadow(0 -3px 0 var(--color-main));
+    transform: rotate(180deg);
+    left: 0;
+    bottom: -14px;
+}
+.wave-shadow__top {
+    filter: drop-shadow(0 -3px 2px var(--color-main__transparent));
+    left: 0;
+    top: -14px;
+}
+.wave-shadow__bottom {
+    filter: drop-shadow(0 -3px 2px var(--color-main__transparent));
+    transform: rotate(180deg);
+    left: 0;
+    bottom: -14px;
+}
+@media screen and (min-width: 960px) {
+.wave-parts.pc {
+    display: block;
+}
+.wave-parts.sp {
+    display: none;
+}
+}
