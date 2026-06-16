@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+/*===========================================================
+    1. ヘッダー
+===========================================================*/
+.header {
+    padding: 35px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: var(--color-main);
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+/* スクロール後の縮小状態（JS で付与） */
+.header.is-small {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-main-15);
+    box-shadow: 0 2px 20px var(--color-main-8);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ロゴエリア */
+.header__logo {
+    width: 160px;
+    transition: width var(--transition);
+}
+.header.is-small .header__logo {
+    width: 110px;
+}
+.header__logo img {
+    height: 38px;
+    width: auto;
+}
+
+/* ナビゲーション（右寄せ） */
+.header__nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.header__nav-list {
+    display: flex;
+    align-items: center;
+}
+/* 各ナビ項目 */
+.header__nav-list li {
+    padding: 0 15px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-right: 1px solid var(--color-white);
+}
+.header__nav-list li:last-child {
+    border-right: none;
+}
+.header__nav-list a {
+    color: var(--color-white);
+    transition: color var(--transition);
+}
+.header__nav-list a:hover {
+    color: var(--color-grey);
+}
+
+/* コンタクトボタン（ヘッダー右端） */
+.header__contact {
+    height: 30px;
+    margin-left: 10px;
+    padding: 0 20px;
+    border-radius: var(--radius-s);
+    background: var(--color-sub);
+}
+.header__contact a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--color-main);
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+/*===========================================================
+    2. バーガーメニュー（SP）
+===========================================================*/
+.burger-trigger {
+    display: none; /* 768px以下で tb.css が display:flex に上書き */
+    width: 35px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 12px;
+}
+.burger-trigger span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-base);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+}
+.burger-trigger span:nth-child(1) { top: 0; }
+.burger-trigger span:nth-child(2) { top: 11px; }
+.burger-trigger span:nth-child(3) { top: 22px; }
+
+/* 開いたとき（JS で .is-open を付与） */
+.burger-trigger.is-open span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+.burger-trigger.is-open span:nth-child(2) { opacity: 0; }
+.burger-trigger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+
+/* バーガーメニュー本体（画面全体を覆うオーバーレイ） */
+.burger-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: var(--color-base);
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.burger-menu.is-open {
+    display: block;
+}
+.burger-menu__list li {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid var(--color-main-12);
+    width: 88%;
+    margin: 0 auto;
+}
+.burger-menu__list a,
+.burger-menu__close {
+    display: block;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+/*===========================================================
+    3. hero
+===========================================================*/
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/image_1.png');
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+.hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-width);
+    margin: auto;
+    width: 100%;
+}
+.hero__eyebrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: rgba(245, 240, 232, 0.6);
+    margin-bottom: 18px;
+    text-align: center;
+}
+.hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 0.9em;
+    letter-spacing: 0.05em;
+    color: var(--color-base);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/*===========================================================
+    4. intro
+===========================================================*/
+.intro__img-box--1 { background-image: url('../images/image_2.png'); }
+.intro__img-box--2 { background-image: url('../images/image_3.png'); }

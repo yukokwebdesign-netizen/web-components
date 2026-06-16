@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* tb.css */
+
+@media (max-width: 1024px) {
+
+    .container {
+        padding: 0 4%;
+    }
+
+    /* タブレットでは2カラム */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* 3枚目カードを中央寄せ */
+    .feature-card:last-child {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 10px);
+        margin-inline: auto;
+    }
+
+    .feature-card__body {
+        padding: 20px 22px 28px;
+    }
+
+    .feature-card__num {
+        font-size: 4.4rem;
+    }
+
+    .feature-card__title {
+        font-size: 1.8rem;
+    }
+
+    .feature-card__text {
+        font-size: 1.6rem;
+    }
+}

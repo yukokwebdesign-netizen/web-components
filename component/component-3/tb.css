@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* tb.css */
+
+@media (max-width: 1024px) {
+    .service-main {
+        padding-top: 60px;
+    }
+    .service-main__panel {
+        min-height: 280px;
+    }
+    .service-stats__item {
+        padding: 20px 24px;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>NATURA | 自然と人をつなぐ、エコツーリズム</title>
+<meta name="description" content="大自然の中で過ごす体験を通じて、人と自然のつながりを深めます。森林浴、登山、川下り、野生動物観察など、本物の自然体験を提供します。">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;1,400;1,600&family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/import.css">
+</head>
+
+<body>
+
+<header id="header" class="header tr">
+  <div class="container header__inner flx">
+    <div class="header__logo flx tr">
+      <a href="#">
+        <img src="images/logo.png" alt="NATURA">
+      </a>
+    </div>
+
+    <!-- ナビ（PC） -->
+    <nav class="header__nav">
+      <ul class="header__nav-list pc">
+        <li><a href="#lineup">ツアー</a></li>
+        <li><a href="#scene">活動</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#company">アクセス</a></li>
+      </ul>
+
+      <!-- コンタクトボタン -->
+      <div class="header__contact">
+        <a href="#company" class="ls015">CONTACT</a>
+      </div>
+
+      <!-- バーガートリガー（SP のみ表示） -->
+      <button class="burger-trigger sp" id="js-burger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<!-- バーガーメニュー（SP） -->
+<nav class="burger-menu" id="js-burger-menu">
+  <ul class="burger-menu__list">
+    <li><a href="#lineup">ツアー</a></li>
+    <li><a href="#scene">活動</a></li>
+    <li><a href="#about">私たちについて</a></li>
+    <li><a href="#company">アクセス</a></li>
+    <li><span class="burger-menu__close" id="js-burger-close">閉じる</span></li>
+  </ul>
+</nav>
+
+<main>
+<section class="hero pos-re" id="hero">
+  <div class="hero__bg cover"></div>
+
+  <div class="hero__img pc">
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow font-display italic fw3 ls02">ECO TOURISM · JAPAN</p>
+    <h1 class="hero__title font-display italic fw6">NATURA</h1>
+  </div>
+</section>
+
+<section class="bg-beige">
+  <div class="intro">
+    <div class="intro__boxes bg-black anim-fade-up">
+
+      <div class="intro__box intro__text-box">
+        <div class="intro__logo-wrap flx">
+          <div class="intro__logo-img">
+            <img src="images/logo-mark.png" alt="NATURA ロゴマーク">
+          </div>
+          <p class="intro__logo-name ls01 fw5 text-beige">ナトゥーラ</p>
+        </div>
+        <p class="intro__desc">従来の観光旅行の枠を超え、人間と自然が本来持つつながりを取り戻す体験を提供します。プロのガイドと共に、普段では出会えない自然の姿に迫ります。</p>
+      </div>
+
+      <!-- box1 -->
+      <div class="intro__box intro__img-box intro__img-box--1 cover">
+        <div class="w100">
+          <h2 class="intro__catch font-display ls01">
+            <span class="italic fw3">FOR</span>REAL NATURE
+          </h2>
+          <p class="intro__catch-sub">本物の自然と向き合う体験</p>
+        </div>
+      </div>
+
+      <!-- box2 -->
+      <div class="intro__box intro__img-box intro__img-box--2 cover">
+        <div class="w100">
+          <h2 class="intro__catch font-display ls01">
+            <span class="italic fw3">FOR</span>SUSTAINABILITY
+          </h2>
+          <p class="intro__catch-sub">次世代へつなぐ豊かな自然環境</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

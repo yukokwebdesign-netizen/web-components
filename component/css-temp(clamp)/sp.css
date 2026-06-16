@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/* sp.css */
+
+/* PC/SP 表示切り替え */
+    .pc { display: none; }
+    .sp { display: block; }

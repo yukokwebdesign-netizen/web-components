@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* sp.css */
+
+@media (max-width: 768px) {
+
+    /* PC/SP 表示切り替え */
+    .pc { display: none; }
+    .sp { display: block; }
+
+    /* 1カラム縦積み */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* タブレット用の3枚目カード指定をリセット */
+    .feature-card:last-child {
+        grid-column: auto;
+        max-width: 100%;
+        margin-inline: 0;
+    }
+
+    .feature-card__img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .feature-card__body {
+        padding: 16px 18px 24px;
+    }
+
+    .feature-card__num {
+        font-size: 3.6rem;
+        margin-bottom: 10px;
+    }
+
+    .feature-card__title {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .feature-card__text {
+        font-size: 1.5rem;
+    }
+}
