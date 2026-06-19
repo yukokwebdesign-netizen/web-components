@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* sp.css */
+
+@media (max-width: 768px) {
+    .service-main {
+        flex-direction: column;
+    }
+
+    .service-img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 0;
+    }
+
+    .service-panel-black {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        padding: 5%;
+    }
+
+    .service-panel-yellow {
+        width: 100%;
+        margin-left: 0;
+    }
+}

@@ -1,8 +1,0 @@
-@charset "utf-8";
-/* tb.css */
-
-@media (max-width: 1024px) {
-    .service-main__panel {
-        min-height: 280px;
-    }
-}
