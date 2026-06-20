@@ -1,12 +1,12 @@
 @charset "utf-8";
 
+/* reset.css */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 html {
-    font-size: 10px; /* 1rem = 10px（例：1.6rem = 16px） */
     height: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;

@@ -1,101 +1,70 @@
 @charset "utf-8";
 
-/* ----- hero ----- */
-.hero {
-    position: relative;
-    min-height: 1080px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-.hero__title {
-    font-size: clamp(1.6rem, 2.5vw, 4rem);
-    line-height: 1.5;
-}
+/* pc.css */
 
-/* 右側の画像（PC のみ表示） */
-.hero__img {
-    position: absolute;
-    right: -5%;
-    top: 0;
-    bottom: 0;
-    width: 48%;
-    z-index: 1;
-    overflow: hidden;
-}
-.hero__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* ファーストビュー */
 
-/* ----- intro ----- */
-.intro {
-    padding: 0 0 0 5%;
-    margin: -8% 0 0 0;
-    position: relative;
-    z-index: 3;
-}
-.intro__boxes {
-    background: var(--color-black);
-    display: flex;
-}
-.intro__box {
-    width: 33.333%;
-}
-.intro__text-box {
-    padding: 5% 4%;
-}
-.intro__logo-wrap {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.intro__logo-img {
-    width: 40%;
-    border-right: 1px solid rgba(245, 240, 232, 0.2);
-    margin-right: 5%;
-    padding-right: 5%;
-    max-width: 200px;
-}
-.intro__logo-name {
-    font-size: clamp(1.6rem, 1.125vw, 1.8rem);
-    color: var(--color-base);
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    line-height: 1.5;
-}
-.intro__desc {
-    font-size: clamp(1.6rem, 1.0vw, 1.6rem);
-    color: rgba(245, 240, 232, 0.7);
-    line-height: 1.5;
-}
-.intro__img-box {
-    padding: 5% 4%;
+.first {
+    height: 100vh;
+    background-image: url('../img/img-1.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.intro__catch {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 1.875vw, 3rem);
-    font-weight: 600;
+
+.first-catch {
+    font-size: 500%;
     color: var(--color-base);
-    line-height: 1.1em;
-    margin-bottom: 12px;
 }
-.intro__catch span {
-    display: block;
-    font-size: 0.65em;
-    margin-bottom: 5px;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1em;
+
+/* イントロ */
+
+.intro-wrap {
+    position: relative;
 }
-.intro__catch-sub {
-    font-size: clamp(1.6rem, 1.0vw, 1.6rem);
-    color: rgba(245, 240, 232, 0.8);
-    line-height: 1.5;
-    text-align: center;
+
+.intro-cards {
+    display: flex;
+    margin-left: 10%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.intro-card-dark, .intro-card-light-1,
+.intro-card-light-2 {
+    flex:1;
+    padding: 5%;
+}
+
+.intro-card-dark {
+    background: var(--color-main);
+    color: var(--color-base);
+}
+
+.intro-card-light-1 {
+    background-image: url('../img/img-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.intro-card-light-2 {
+    background-image: url('../img/img-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.intro-card-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-card-subtitle {
+    order: -1;
 }

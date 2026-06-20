@@ -1,13 +1,17 @@
 @charset "utf-8";
 
-@media screen and (max-width: 767px) {
+/* sp.css */
 
-body { padding-top: 66px; }
-.container { padding: 0 4%; }
-.section-title { margin-bottom: 8%; }
-.hero__inner { padding: 12% 4% 10% 4%; }
-.hero__title { line-height: 0.88em; }
-.btn { padding: 13px 28px; }
-.intro__logo-img { width: 35%; }
+@media (max-width: 768px) {
+    .first {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
 
+    .intro-cards {
+        flex-direction: column;
+        margin-left: 0;
+        position: static;
+        transform: none;
+    }
 }
