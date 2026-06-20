@@ -5,15 +5,11 @@
 .service-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
 }
 
 .service-main {
     display: flex;
     align-items: stretch;
-    justify-content: flex-start;
-    position: relative;
 }
 
 .service-img {
@@ -23,7 +19,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
     z-index: 2;
 }
 
@@ -34,7 +29,6 @@
     background: var(--color-main);
     color: var(--color-base);
     padding: 5% 5% 5% 25%;
-    position: relative;
     z-index: 1;
 }
 
